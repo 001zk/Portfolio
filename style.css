@@ -1,20 +1,39 @@
-header .menu span:first-child {
-    font-size: 36px;
+header .top-bar .menu {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+header .top-bar .menu .header-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
     color: #000;
-    display: block;
-    margin-bottom: 10px;
-
 }
 
-header .menu span:nth-child(2) {
-    font-size: 14px;
-    color: #444;
-    letter-spacing: 2px;
+header .top-bar .menu .header-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
-.top-bar{
+header .top-bar .menu .header-socials a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header .top-bar .menu .header-socials a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+
+header .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,38 +41,15 @@ header .menu span:nth-child(2) {
     padding: 10px 20px;
 }
 
-.top-bar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    
-}
-
-.top-bar .menu {
-    display: block;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #000;
-    display: block;
-    margin-bottom: 5px;
-    text-align: right;
-}
-
-.top-bar .menu span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    line-height: 1.5;
-    align-items: center;
+header .italic {
+    font-style: italic;
 }
 
 .decorative-line {
-    width: 100px;
-    height:5px;
+    width: 100%;
+    height: 4px;
     background-color: #000;
-    margin: 10px auto;
-    position: relative;
+    margin: 20px 0;
 
 }
 
@@ -88,30 +84,28 @@ p{
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
-    text-transform: uppercase;
 
 }
 
 .informacoes {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
     position: relative;
-    margin-top: 20px;
-    align-items: flex-start;
+    margin-top: 40px;
+
 }
 
 
 .informacoes .coluna {
-    width: 30px;
-    text-align: left;
+    flex: 1;
+    text-align: center;
     position: relative;
 
 }
 
 .informacoes .coluna h3 {
     font-size: 18px;
-    font-weight:bold;
     margin-bottom: 10px;
     text-transform: uppercase;
     color: #000;
@@ -121,7 +115,7 @@ p{
     content: "";
     position: absolute;
     top: 0;
-    right: -10px;
+    right: -15px;
     height: 100%;
     width: 2px;
     background-color: #000;
@@ -149,19 +143,15 @@ h2, h3 {
     text-decoration: underline;
  }
 
- .contatos{
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
- }
 
- .contatos a img {
+
+ .header-sociais a img {
     width: 40px;
     height: 40px;
     transition: transform 0.2s ease, filter 0.2s ease;
  }
 
-.contatos a:hover img {
+.header-socials a:hover img {
     transform: scale(1.2);
     filter: brightness(1.5);
 }
@@ -185,7 +175,6 @@ h2, h3 {
     display: flex;
     justify-content: center;
     gap: 30px;
-    grid-template-columns: repeat(4, 1fr);
     margin-top: 20px;
 
  }
@@ -207,9 +196,49 @@ h2, h3 {
 
 #certificados {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
-    border-top: 2px solid #ddd;
+    overflow: hidden;
+}
+
+#certificado h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.certificados-conteiner {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+.certificados-conteiner::-webkit-scrollbar {
+    display: none;
+}
+
+.certificado-card {
+    flex: 0 0 auto;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba( 0,0,0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+
+.certificado-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.certificado-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 footer {
