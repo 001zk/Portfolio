@@ -170,16 +170,20 @@ p {
 
 .certificados-conteiner {
     display: grid;
-    grid-template-columns: repeat(150px, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 6fr));
+    gap: 20px;
     justify-content: center;
     padding: 30px;
 }
 
-.certificado-card:first-child {
-    grid-column: 4 / -1;
-    max-width: 400px;
+.certificado-card{
+    max-width: 100%;
     margin: 0 auto;
+}
+
+.certificado-card:first-child {
+    max-width: none;
+    height: 100%;
 }
 
 .certificado-card {
