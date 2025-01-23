@@ -12,7 +12,7 @@ header .top-bar .menu .header-name {
     font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #000;
+    color: #D3D3D3;
 }
 
 header .top-bar .menu .header-socials {
@@ -37,8 +37,9 @@ header .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #A9A9A9;
     padding: 10px 20px;
+    background: linear-gradient(90deg, #1C1C1C, #383838);
 }
 
 header .italic {
@@ -53,34 +54,39 @@ header .italic {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    color: #D3D3D3; /* Texto em cinza suave */
+    background: linear-gradient(180deg, #1C1C1C, #383838); /* Degradê vertical */
+    background-attachment: fixed; /* Degradê fixo ao rolar */
+    background-size: cover; /* Garante que cubra toda a área */
+    min-height: 100vh; /* Altura mínima para o degradê preencher a tela */
 }
 
+/* Ajuste geral dos textos */
 h2, h3 {
     font-weight: bold;
     text-transform: uppercase;
+    color: #D3D3D3; /* Texto com tom mais claro para contraste */
 }
 
 p {
-    margin: 5px 0;
+    color: #A9A9A9; /* Texto secundário */
 }
-
 /* Introdução */
 #introducao {
     text-align: center;
     padding: 40px 20px;
-    background-color: #fff;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid #000;
+    border-top: 3px solid #A9A9A9;
+    border-bottom: 3px solid #A9A9A9;
 }
 
 #introducao h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: #D3D3D3;
 }
 
 .informacoes {
@@ -101,7 +107,7 @@ p {
     font-size: 18px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    color: #000;
+    color: #D3D3D3;
 }
 
 .informacoes .coluna:not(:last-child)::after {
@@ -111,7 +117,7 @@ p {
     right: -15px;
     height: 100%;
     width: 2px;
-    background-color: #000;
+    background-color: #A9A9A9;
 }
 
 .informacoes .coluna p {
@@ -140,7 +146,7 @@ p {
     text-transform: uppercase;
     margin-bottom: 20px;
     font-weight: bold;
-    color: #000;
+    color: #D3D3D3;
 }
 
 .skills-grid {
@@ -165,7 +171,6 @@ p {
 #certificados {
     padding: 40px 20px;
     text-align: center;
-    background-color: #fff;
 }
 
 .certificados-conteiner {
@@ -181,13 +186,13 @@ p {
     margin: 0 auto;
 }
 
+
 .certificado-card:first-child {
     max-width: none;
     height: 100%;
 }
 
 .certificado-card {
-    background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
@@ -237,14 +242,15 @@ p {
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #f1f1f1;
-    border-top: 2px solid #000;
+    border-top: 2px solid #A9A9A9;
+    color: #D3D3D3;
 }
 
 * {
     opacity: 0;
     transform: translateY(70px);
     transition: opacity 0.1s ease, transform 0.1s ease;
+    color: #D3D3D3;
 }
 
 .visible {
