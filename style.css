@@ -64,15 +64,15 @@ body {
     min-height: 100vh; /* Altura mínima para o degradê preencher a tela */
 }
 
-/* Ajuste geral dos textos */
+
 h2, h3 {
     font-weight: bold;
     text-transform: uppercase;
-    color: #D3D3D3; /* Texto com tom mais claro para contraste */
+    color: #D3D3D3; 
 }
 
 p {
-    color: #A9A9A9; /* Texto secundário */
+    color: #A9A9A9; 
 }
 /* Introdução */
 #introducao {
@@ -117,7 +117,6 @@ p {
     right: -15px;
     height: 100%;
     width: 2px;
-    background-color: #A9A9A9;
 }
 
 .informacoes .coluna p {
@@ -242,7 +241,6 @@ p {
 footer {
     text-align: center;
     padding: 10px 0;
-    border-top: 2px solid #A9A9A9;
     color: #D3D3D3;
 }
 
