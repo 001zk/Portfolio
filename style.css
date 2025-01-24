@@ -58,6 +58,7 @@ body {
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #D3D3D3; /* Texto em cinza suave */
+    /* dando erro "glitch de luz ao rolar a pagina no safari, preciso resolver background: linear-gradient(180deg, #1C1C1C, #383838); /* Degradê vertical */
     background-attachment: scroll; /* Degradê fixo ao rolar */
     background-size: cover; /* Garante que cubra toda a área */
     min-height: 100vh; /* Altura mínima para o degradê preencher a tela */
