@@ -45,9 +45,6 @@ header .top-bar {
     background-color: #1C1C1C;
 }
 
-header .italic {
-    font-style: italic;
-}
 
 .decorative-line {
     width: 100%;
@@ -68,14 +65,14 @@ body {
 }
 
 
-h2, h3 {
+h2, h3, {
     font-weight: bold;
     text-transform: uppercase;
     color: #D3D3D3; /* Texto com tom mais claro para contraste */
 }
 
-p {
-    color: #A9A9A9; /* Texto secundário */
+p, i {
+    color: #D3D3D3; /* Texto secundário */
 }
 /* Introdução */
 #introducao {
@@ -177,7 +174,6 @@ p {
     padding: 40px 20px;
     text-align: center;
     color: #D3D3D3;
-    border-top: 2px solid #A9A9A9;
 
 }
 
@@ -189,22 +185,14 @@ p {
     padding: 30px;
 }
 
-.certificado-card{
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-
 .certificado-card:first-child {
     max-width: none;
     height: 100%;
 }
 
 .certificado-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 43px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     width: 250px;
@@ -212,9 +200,9 @@ p {
 }
 
 .certificado-card img {
-    width: 100%;
+    width: auto;
     height: auto;
-    border-radius: 30px 30px 0 0;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .certificado-card:hover {
@@ -235,7 +223,6 @@ p {
 }
 .certificados-conteiner img {
     filter: grayscale(100%); /* Inicialmente preto e branco */
-    transition: filter 0.3s ease-in-out; /* Transição suave para o efeito */
     cursor: pointer;
     width: 100%;
     max-width: 300px;
