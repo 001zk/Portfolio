@@ -969,6 +969,69 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     color: var(--amber);
 }
 
+/* ── HERO CHIPS ── */
+.hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 22px;
+}
+.hero-chips span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.hero-chips span:hover {
+    color: var(--amber);
+    border-color: rgba(245,158,11,0.25);
+    background: var(--amber-soft);
+}
+
+/* ── FOOTER ── */
+.site-footer {
+    margin-left: var(--sidebar-w);
+    border-top: 1px solid var(--border);
+    padding: 18px 56px;
+}
+.footer-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.site-footer > .footer-inner > span {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.site-footer strong {
+    color: var(--text-dim);
+    font-weight: 500;
+}
+.footer-gh {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+.footer-gh img {
+    width: 15px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+.footer-gh:hover { color: var(--amber); }
+.footer-gh:hover img { opacity: 0.9; }
+
 /* ══════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════ */
@@ -982,6 +1045,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     .mobile-header  { display: flex; }
     .mob-overlay    { display: block; }
     .content-wrap   { margin-left: 0; padding-top: 58px; }
+    .site-footer    { margin-left: 0; padding: 16px 22px; }
     .section        { padding: 60px 22px; }
     .tl-item        { grid-template-columns: 0 30px 1fr; }
     .tl-left        { display: none; }
