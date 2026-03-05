@@ -12,24 +12,6 @@
 </head>
 <body>
 
-<!-- NOISE OVERLAY -->
-<div class="noise"></div>
-
-<!-- CANVAS BACKGROUND -->
-<canvas id="bg-canvas"></canvas>
-
-<!-- CURSOR -->
-<div class="cursor-ring" id="cursor-ring"></div>
-<div class="cursor-dot"  id="cursor-dot"></div>
-
-<!-- LOADER -->
-<div class="loader" id="loader">
-    <div class="loader-inner">
-        <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
-        <p class="loader-text" id="loader-text">INICIANDO SISTEMA...</p>
-    </div>
-</div>
-
 <!-- SIDEBAR NAV -->
 <nav class="sidebar" id="sidebar">
     <div class="sidebar-logo">
@@ -51,7 +33,7 @@
 
 <!-- MOBILE HEADER -->
 <header class="mobile-header" id="mobile-header">
-    <span class="mob-logo">LG_</span>
+    <span class="mob-logo">LG</span>
     <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
     </button>
@@ -72,109 +54,66 @@
 <!-- MAIN CONTENT -->
 <div class="content-wrap">
 
-    <!-- ═══════════════════════════════
-         SECTION 00 — HERO
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         00 · HERO
+    ══════════════════════════ -->
     <section id="hero" class="section hero-section">
-        <div class="hero-inner">
 
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>NOC · INFRAESTRUTURA · REDES</span>
+        <div class="hero-eyebrow reveal-up">
+            <span class="eyebrow-tag">NOC · INFRAESTRUTURA · REDES</span>
+        </div>
+
+        <h1 class="hero-name reveal-up delay-1">
+            Luiz<br><span class="name-accent">Gustavo.</span>
+        </h1>
+
+        <p class="hero-role reveal-up delay-2">
+            Analista de NOC &amp; Infraestrutura de Redes
+        </p>
+
+        <p class="hero-desc reveal-up delay-3">
+            Experiência em operação de redes ópticas GPON/EPON, infraestrutura de TI
+            corporativa, virtualização e troubleshooting avançado. Campos dos Goytacazes, RJ.
+        </p>
+
+        <div class="hero-metrics reveal-up delay-3">
+            <div class="metric">
+                <span class="metric-num" data-count="3">0</span>
+                <span class="metric-unit">+</span>
+                <span class="metric-label">Anos de experiência</span>
             </div>
-
-            <h1 class="hero-name">
-                <span class="line-reveal">LUIZ</span>
-                <span class="line-reveal delay-1">GUSTAVO<span class="name-accent">.</span></span>
-            </h1>
-
-            <div class="hero-sub-row">
-                <div class="hero-role">
-                    <span class="type-prefix">$ </span>
-                    <span class="typewriter" id="typewriter"></span><span class="type-cursor">▮</span>
-                </div>
+            <div class="metric-divider"></div>
+            <div class="metric">
+                <span class="metric-num" data-count="11">0</span>
+                <span class="metric-unit">+</span>
+                <span class="metric-label">Certificados técnicos</span>
             </div>
-
-            <p class="hero-desc reveal-up">
-                Analista de NOC com experiência em operação de redes ópticas GPON/EPON,
-                infraestrutura de TI corporativa, virtualização e troubleshooting avançado.
-                Focado em disponibilidade, performance e segurança de redes.
-            </p>
-
-            <div class="hero-metrics reveal-up delay-2">
-                <div class="metric">
-                    <span class="metric-num" data-count="3">0</span>
-                    <span class="metric-unit">+</span>
-                    <span class="metric-label">Anos de<br>Experiência</span>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric">
-                    <span class="metric-num" data-count="11">0</span>
-                    <span class="metric-unit">+</span>
-                    <span class="metric-label">Certificados<br>Técnicos</span>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric">
-                    <span class="metric-num" data-count="100">0</span>
-                    <span class="metric-unit">%</span>
-                    <span class="metric-label">Foco em<br>Uptime</span>
-                </div>
-            </div>
-
-            <div class="hero-socials reveal-up delay-3">
-                <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" class="hero-soc-btn">
-                    <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn">LinkedIn
-                </a>
-                <a href="https://github.com/001zk" target="_blank" class="hero-soc-btn">
-                    <img src="logo-ctt/github-yellow.png" alt="GitHub">GitHub
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" class="hero-soc-btn outline">
-                    <img src="logo-ctt/gmail-yellow.png" alt="Gmail">Contato
-                </a>
-            </div>
-
-            <div class="hero-scroll reveal-up delay-4">
-                <span>SCROLL</span>
-                <div class="scroll-line"><div class="scroll-thumb"></div></div>
+            <div class="metric-divider"></div>
+            <div class="metric">
+                <span class="metric-num" data-count="4">0</span>
+                <span class="metric-unit"></span>
+                <span class="metric-label">Cargos na área de TI</span>
             </div>
         </div>
 
-        <!-- HERO SIDE DECORATION -->
-        <div class="hero-deco">
-            <div class="deco-frame">
-                <div class="deco-corner tl"></div>
-                <div class="deco-corner tr"></div>
-                <div class="deco-corner bl"></div>
-                <div class="deco-corner br"></div>
-                <div class="deco-inner">
-                    <div class="deco-label">SYS · STATUS</div>
-                    <div class="deco-row"><span>CPU</span><div class="deco-bar"><div class="deco-fill" style="--w:62%"></div></div><span>62%</span></div>
-                    <div class="deco-row"><span>MEM</span><div class="deco-bar"><div class="deco-fill" style="--w:47%"></div></div><span>47%</span></div>
-                    <div class="deco-row"><span>NET</span><div class="deco-bar"><div class="deco-fill" style="--w:88%; --c:var(--green)"></div></div><span class="green-text">88%</span></div>
-                    <div class="deco-row"><span>NOC</span><div class="deco-bar"><div class="deco-fill" style="--w:100%; --c:var(--green)"></div></div><span class="green-text">OK</span></div>
-                    <div class="deco-sep"></div>
-                    <div class="deco-ping">
-                        <span class="ping-dot"></span>
-                        <span>ping 8.8.8.8 — 2ms</span>
-                    </div>
-                    <div class="deco-ping">
-                        <span class="ping-dot"></span>
-                        <span>uptime — 99.97%</span>
-                    </div>
-                    <div class="deco-ping offline">
-                        <span class="ping-dot red"></span>
-                        <span>alertas — 0 críticos</span>
-                    </div>
-                </div>
-            </div>
-            <div class="deco-glow"></div>
+        <div class="hero-socials reveal-up delay-4">
+            <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" class="hero-soc-btn">
+                <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"> LinkedIn
+            </a>
+            <a href="https://github.com/001zk" target="_blank" class="hero-soc-btn secondary">
+                <img src="logo-ctt/github-yellow.png" alt="GitHub"> GitHub
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" class="hero-soc-btn secondary">
+                <img src="logo-ctt/gmail-yellow.png" alt="Gmail"> E-mail
+            </a>
         </div>
+
     </section>
 
 
-    <!-- ═══════════════════════════════
-         SECTION 01 — SOBRE
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         01 · SOBRE
+    ══════════════════════════ -->
     <section id="sobre" class="section">
         <div class="section-header reveal-up">
             <span class="sec-tag">// 01</span>
@@ -190,13 +129,14 @@
                     <strong>Arroba Banda Larga</strong>, provedor de internet em Campos dos Goytacazes, RJ.
                 </p>
                 <p>
-                    Atuo na <strong>operação de redes ópticas GPON/EPON</strong>, monitoramento de infraestrutura,
+                    Atuo na operação de <strong>redes ópticas GPON/EPON</strong>, monitoramento de infraestrutura,
                     provisionamento de ONU/ONT, configuração de VPNs, ambientes virtualizados e
                     troubleshooting avançado de camadas 2 e 3.
                 </p>
                 <p>
-                    Além da operação, tenho interesse em <strong>automação de tarefas de rede</strong>
-                    via scripting Python, análise de dados de performance e segurança de perímetro.
+                    Complementarmente, desenvolvo <strong>scripts de automação</strong> com Python e JavaScript,
+                    incluindo soluções via Google Apps Script para integração entre planilhas,
+                    formulários e ferramentas internas — reduzindo trabalho manual em processos operacionais.
                 </p>
             </div>
 
@@ -219,7 +159,7 @@
                         <div class="tc-field"><span class="tc-k">local</span><span class="tc-sep">:</span><span class="tc-v">Campos dos Goytacazes, RJ</span></div>
                         <div class="tc-field"><span class="tc-k">cargo</span><span class="tc-sep">:</span><span class="tc-v amber">Analista de NOC &amp; TI Interno</span></div>
                         <div class="tc-field"><span class="tc-k">empresa</span><span class="tc-sep">:</span><span class="tc-v">Arroba Banda Larga</span></div>
-                        <div class="tc-field"><span class="tc-k">foco</span><span class="tc-sep">:</span><span class="tc-v">GPON · VPN · Virtualização</span></div>
+                        <div class="tc-field"><span class="tc-k">foco</span><span class="tc-sep">:</span><span class="tc-v">GPON · VPN · Automação</span></div>
                     </div>
                     <div class="tc-line mt">
                         <span class="tc-prompt">~$</span>
@@ -232,7 +172,7 @@
                     </div>
                     <div class="tc-line mt">
                         <span class="tc-prompt">~$</span>
-                        <span class="tc-cursor-line">▮</span>
+                        <span class="tc-cursor-blink">▮</span>
                     </div>
                 </div>
             </div>
@@ -240,9 +180,9 @@
     </section>
 
 
-    <!-- ═══════════════════════════════
-         SECTION 02 — EXPERIÊNCIA
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         02 · EXPERIÊNCIA
+    ══════════════════════════ -->
     <section id="experiencia" class="section">
         <div class="section-header reveal-up">
             <span class="sec-tag">// 02</span>
@@ -254,8 +194,8 @@
 
             <div class="tl-item reveal-up">
                 <div class="tl-left">
-                    <div class="tl-badge current">ATUAL</div>
-                    <div class="tl-company">Arroba Banda Larga</div>
+                    <span class="tl-badge current">Atual</span>
+                    <span class="tl-company">Arroba Banda Larga</span>
                 </div>
                 <div class="tl-connector">
                     <div class="tl-node active"></div>
@@ -271,7 +211,7 @@
                     <div class="tl-chips">
                         <span>GPON / EPON</span>
                         <span>Virtualização</span>
-                        <span>Monitoramento NOC</span>
+                        <span>NOC</span>
                         <span>Troubleshooting L2/L3</span>
                         <span>TI Corporativo</span>
                     </div>
@@ -280,17 +220,17 @@
 
             <div class="tl-item reveal-up delay-1">
                 <div class="tl-left">
-                    <div class="tl-company">Arroba Banda Larga</div>
+                    <span class="tl-company">Arroba Banda Larga</span>
                 </div>
                 <div class="tl-connector">
                     <div class="tl-node"></div>
                     <div class="tl-line"></div>
                 </div>
                 <div class="tl-right">
-                    <h3>Estagiário NOC Nível 3 &amp; TI Interno</h3>
+                    <h3>Estagiário de NOC N3 &amp; TI Interno</h3>
                     <p>
                         Atuação em NOC e TI interno com configuração de VPNs,
-                        virtualização, suporte técnico e apoio em troubleshooting de rede.
+                        virtualização, suporte técnico e troubleshooting de rede.
                     </p>
                     <div class="tl-chips">
                         <span>VPN</span>
@@ -303,7 +243,7 @@
 
             <div class="tl-item reveal-up delay-2">
                 <div class="tl-left">
-                    <div class="tl-company">Arroba Banda Larga</div>
+                    <span class="tl-company">Arroba Banda Larga</span>
                 </div>
                 <div class="tl-connector">
                     <div class="tl-node"></div>
@@ -326,7 +266,7 @@
 
             <div class="tl-item reveal-up delay-3">
                 <div class="tl-left">
-                    <div class="tl-company">Microlins</div>
+                    <span class="tl-company">Microlins</span>
                 </div>
                 <div class="tl-connector">
                     <div class="tl-node"></div>
@@ -349,9 +289,9 @@
     </section>
 
 
-    <!-- ═══════════════════════════════
-         SECTION 03 — SKILLS
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         03 · SKILLS
+    ══════════════════════════ -->
     <section id="skills" class="section">
         <div class="section-header reveal-up">
             <span class="sec-tag">// 03</span>
@@ -361,7 +301,7 @@
 
         <div class="skills-layout">
 
-            <!-- CATEGORY: REDES -->
+            <!-- Redes -->
             <div class="skill-cat reveal-up">
                 <div class="skill-cat-header">
                     <span class="skill-cat-icon">◈</span>
@@ -391,7 +331,7 @@
                 </div>
             </div>
 
-            <!-- CATEGORY: SISTEMAS -->
+            <!-- Sistemas -->
             <div class="skill-cat reveal-up delay-1">
                 <div class="skill-cat-header">
                     <span class="skill-cat-icon">◈</span>
@@ -417,28 +357,52 @@
                 </div>
             </div>
 
-            <!-- CATEGORY: DEV -->
-            <div class="skill-cat reveal-up delay-2">
+            <!-- Dev & Automação — full width -->
+            <div class="skill-cat full-width reveal-up delay-2">
                 <div class="skill-cat-header">
                     <span class="skill-cat-icon">◈</span>
                     <span class="skill-cat-name">Desenvolvimento &amp; Automação</span>
                 </div>
-                <div class="skill-logos-grid">
-                    <div class="skill-logo-card">
-                        <img src="skills-logo/py-yellow.png" alt="Python">
-                        <span>Python</span>
-                        <span class="slc-level">Básico/Intermediário</span>
+                <div class="dev-cards">
+
+                    <div class="dev-card">
+                        <div class="dev-card-top">
+                            <img src="skills-logo/py-yellow.png" alt="Python">
+                            <div>
+                                <span class="dev-name">Python</span>
+                                <span class="dev-level">Básico / Intermediário</span>
+                            </div>
+                        </div>
+                        <p class="dev-desc">Scripts de automação de rede, coleta e tratamento de dados, utilitários de linha de comando.</p>
                     </div>
-                    <div class="skill-logo-card">
-                        <img src="skills-logo/js-yellow.png" alt="JavaScript">
-                        <span>JavaScript</span>
-                        <span class="slc-level">Básico</span>
+
+                    <div class="dev-card">
+                        <div class="dev-card-top">
+                            <img src="skills-logo/js-yellow.png" alt="JavaScript">
+                            <div>
+                                <span class="dev-name">JavaScript</span>
+                                <span class="dev-level">Básico / Apps Script</span>
+                            </div>
+                        </div>
+                        <p class="dev-desc">Automação de processos via Google Apps Script — integração Sheets, Forms e APIs externas. Desenvolvimento de pequenas webapps internas.</p>
+                        <div class="dev-tags">
+                            <span>Google Apps Script</span>
+                            <span>Google Sheets API</span>
+                            <span>Webapp</span>
+                        </div>
                     </div>
-                    <div class="skill-logo-card">
-                        <img src="skills-logo/nodejs-yellow.png" alt="Node.js">
-                        <span>Node.js</span>
-                        <span class="slc-level">Básico</span>
+
+                    <div class="dev-card">
+                        <div class="dev-card-top">
+                            <img src="skills-logo/nodejs-yellow.png" alt="Node.js">
+                            <div>
+                                <span class="dev-name">Node.js</span>
+                                <span class="dev-level">Básico</span>
+                            </div>
+                        </div>
+                        <p class="dev-desc">Criação de scripts de back-end simples, automação de tarefas e consumo de APIs REST.</p>
                     </div>
+
                 </div>
             </div>
 
@@ -446,9 +410,9 @@
     </section>
 
 
-    <!-- ═══════════════════════════════
-         SECTION 04 — CERTIFICADOS
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         04 · CERTIFICADOS
+    ══════════════════════════ -->
     <section id="certs" class="section">
         <div class="section-header reveal-up">
             <span class="sec-tag">// 04</span>
@@ -456,7 +420,6 @@
             <div class="sec-line"></div>
         </div>
 
-        <!-- FILTER TABS -->
         <div class="filter-tabs reveal-up">
             <button class="ftab active" data-filter="all">Todos</button>
             <button class="ftab" data-filter="redes">Redes</button>
@@ -471,7 +434,7 @@
             <div class="cert-card reveal-up" data-cat="seguranca">
                 <div class="cc-img-wrap">
                     <img src="certificados/CIBERSEGURAN&#xC7;A: ANATOMIA CLASSICA DE UM CIBERATAQUE.png" alt="Cibersegurança" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Segurança</span>
@@ -482,7 +445,7 @@
             <div class="cert-card reveal-up delay-1" data-cat="redes">
                 <div class="cc-img-wrap">
                     <img src="certificados/Redes, logica e Estrutura&#xE7;&#xE3;o.png" alt="Redes" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Redes</span>
@@ -493,7 +456,7 @@
             <div class="cert-card reveal-up delay-2" data-cat="redes">
                 <div class="cc-img-wrap">
                     <img src="certificados/Internet de las cosas.jpg" alt="IoT" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Redes / IoT</span>
@@ -504,7 +467,7 @@
             <div class="cert-card reveal-up" data-cat="dev">
                 <div class="cc-img-wrap">
                     <img src="certificados/PYTHON BASICO.png" alt="Python Básico" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Dev</span>
@@ -515,7 +478,7 @@
             <div class="cert-card reveal-up delay-1" data-cat="dev">
                 <div class="cc-img-wrap">
                     <img src="certificados/PYTHON POO.png" alt="Python POO" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Dev</span>
@@ -526,7 +489,7 @@
             <div class="cert-card reveal-up delay-2" data-cat="dados">
                 <div class="cc-img-wrap">
                     <img src="certificados/TI COMO ELEMENTO ESTRAT&#xC9;GICO NAS ORGANIZA&#xC7;OES.png" alt="TI Estratégico" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Gestão</span>
@@ -537,7 +500,7 @@
             <div class="cert-card reveal-up" data-cat="dados">
                 <div class="cc-img-wrap">
                     <img src="certificados/FM2S FUNDAMENTO CIENCIAS DE DADOS.png" alt="Ciência de Dados" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Dados</span>
@@ -548,7 +511,7 @@
             <div class="cert-card reveal-up delay-1" data-cat="dados">
                 <div class="cc-img-wrap">
                     <img src="certificados/governan&#xE7;a de dados.jpg" alt="Governança" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Dados</span>
@@ -559,7 +522,7 @@
             <div class="cert-card reveal-up delay-2" data-cat="redes">
                 <div class="cc-img-wrap">
                     <img src="certificados/fundamentos de ti hardware e software.png" alt="Fundamentos TI" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Infraestrutura</span>
@@ -570,7 +533,7 @@
             <div class="cert-card reveal-up" data-cat="ferramentas">
                 <div class="cc-img-wrap">
                     <img src="certificados/Certificado excel avan&#xE7;ado.png" alt="Excel Avançado" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Ferramentas</span>
@@ -581,7 +544,7 @@
             <div class="cert-card reveal-up delay-1" data-cat="ferramentas">
                 <div class="cc-img-wrap">
                     <img src="certificados/excel 2021.png" alt="Excel 2021" loading="lazy">
-                    <div class="cc-hover"><span>AMPLIAR ↗</span></div>
+                    <div class="cc-hover"><span>Ampliar</span></div>
                 </div>
                 <div class="cc-body">
                     <span class="cc-tag">Ferramentas</span>
@@ -593,9 +556,9 @@
     </section>
 
 
-    <!-- ═══════════════════════════════
-         SECTION 05 — CONTATO
-    ═══════════════════════════════ -->
+    <!-- ══════════════════════════
+         05 · CONTATO
+    ══════════════════════════ -->
     <section id="contato" class="section">
         <div class="section-header reveal-up">
             <span class="sec-tag">// 05</span>
@@ -607,20 +570,18 @@
             <div class="contato-text reveal-up">
                 <h3>Vamos conversar.</h3>
                 <p>
-                    Aberto a oportunidades em redes, NOC, infraestrutura e segurança.
-                    Pode me chamar pelo LinkedIn ou mandar um email — respondo rápido.
+                    Aberto a oportunidades em redes, NOC, infraestrutura e automação.
+                    Pode me chamar pelo LinkedIn ou mandar um e-mail — respondo rápido.
                 </p>
                 <div class="contato-cmd">
                     <span class="tc-prompt">~$</span>
-                    <span class="tc-cmd">ping luizgustavobarros32@gmail.com</span>
+                    <span>ping luizgustavobarros32@gmail.com</span>
                 </div>
             </div>
 
             <div class="contato-links reveal-up delay-1">
                 <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" class="contato-card">
-                    <div class="cc-left">
-                        <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn">
-                    </div>
+                    <div class="cc-left"><img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"></div>
                     <div class="cc-right">
                         <span class="cc-net">LinkedIn</span>
                         <span class="cc-handle">Luiz Gustavo de Barros</span>
@@ -628,9 +589,7 @@
                     <span class="cc-arrow">→</span>
                 </a>
                 <a href="https://github.com/001zk" target="_blank" class="contato-card">
-                    <div class="cc-left">
-                        <img src="logo-ctt/github-yellow.png" alt="GitHub">
-                    </div>
+                    <div class="cc-left"><img src="logo-ctt/github-yellow.png" alt="GitHub"></div>
                     <div class="cc-right">
                         <span class="cc-net">GitHub</span>
                         <span class="cc-handle">@001zk</span>
@@ -638,11 +597,9 @@
                     <span class="cc-arrow">→</span>
                 </a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" class="contato-card">
-                    <div class="cc-left">
-                        <img src="logo-ctt/gmail-yellow.png" alt="Gmail">
-                    </div>
+                    <div class="cc-left"><img src="logo-ctt/gmail-yellow.png" alt="Gmail"></div>
                     <div class="cc-right">
-                        <span class="cc-net">Email</span>
+                        <span class="cc-net">E-mail</span>
                         <span class="cc-handle">luizgustavobarros32@gmail.com</span>
                     </div>
                     <span class="cc-arrow">→</span>
