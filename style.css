@@ -568,8 +568,20 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     color: var(--text);
     text-transform: uppercase;
     letter-spacing: -0.3px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     line-height: 1.2;
+}
+.tl-tenure {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    background: var(--green-dim);
+    border: 1px solid rgba(34,211,160,0.2);
+    padding: 2px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
 }
 .tl-right p {
     font-family: var(--mono);

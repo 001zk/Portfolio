@@ -1,4 +1,26 @@
-"use strict";
+/* ── TENURE COUNTER ── */
+(function () {
+    const el = document.getElementById('tenure');
+    if (!el) return;
+
+    const start = new Date(2025, 9, 1); // outubro 2025 (mês 9 = outubro)
+    const now   = new Date();
+
+    let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+    if (months < 1) months = 1;
+
+    const years  = Math.floor(months / 12);
+    const rem    = months % 12;
+
+    let duration = '';
+    if (years > 0 && rem > 0) duration = `${years} ano${years > 1 ? 's' : ''} e ${rem} ${rem === 1 ? 'mês' : 'meses'}`;
+    else if (years > 0)       duration = `${years} ano${years > 1 ? 's' : ''}`;
+    else                      duration = `${months} ${months === 1 ? 'mês' : 'meses'}`;
+
+    el.textContent = `out 2025 – presente · ${duration}`;
+})();
+
+
 
 /* ── SCROLL REVEAL ── */
 (function () {
