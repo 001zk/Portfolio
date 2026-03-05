@@ -3,217 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Luiz Gustavo</title>
+    <title>Luiz Gustavo — NOC & Redes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <div class="top-bar">
-        <div class="menu">
-            <h1 class="header-name">Luiz Gustavo</h1>
-            <p class="header-sub">Experiência • Trabalhos • 2026</p>
+<canvas id="network-canvas"></canvas>
 
-            <div class="header-socials">
-                <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank">
-                    <img src="logo-ctt/linkd-yellow.png">
-                </a>
-                <a href="https://github.com/001zk" target="_blank">
-                    <img src="logo-ctt/github-yellow.png">
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank">
-                    <img src="logo-ctt/gmail-yellow.png">
-                </a>
-            </div>
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="header-status">
+            <span class="status-dot"></span>
+            <span class="status-text">ONLINE · NOC ATIVO</span>
+        </div>
+
+        <div class="header-main">
+            <div class="header-label">// PORTFÓLIO · 2026</div>
+            <h1 class="header-name">LUIZ<br><span class="accent">GUSTAVO</span><span class="cursor">_</span></h1>
+            <p class="header-role">Analista de NOC &amp; Infraestrutura de Redes</p>
+            <p class="header-loc">
+                <span class="prompt">$</span> Campos dos Goytacazes, RJ · Arroba Banda Larga
+            </p>
+        </div>
+
+        <div class="header-socials">
+            <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" class="social-link">
+                <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/001zk" target="_blank" class="social-link">
+                <img src="logo-ctt/github-yellow.png" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" class="social-link">
+                <img src="logo-ctt/gmail-yellow.png" alt="Gmail">
+                <span>Email</span>
+            </a>
         </div>
     </div>
 </header>
 
 <main>
 
+<!-- SOBRE / EXPERIÊNCIA -->
 <section id="introducao" class="fade">
-    <h2>Introdução</h2>
+    <div class="section-tag">// 01 · SOBRE &amp; EXPERIÊNCIA</div>
+    <h2 class="section-title">Trajetória</h2>
 
-    <div class="informacoes">
+    <div class="intro-grid">
 
-        <!-- COLUNA ESQUERDA -->
-        <div class="coluna">
-            <h3>Informações</h3>
-            <p>Luiz Gustavo</p>
-            <p>Campos dos Goytacazes, RJ</p>
-            <p>Analista de NOC e TI Interno</p>
-
-            <h3>Formação</h3>
-            <p>
-                Técnico em Informática (Concluído)<br>
-                Universidade Estácio de Sá
-            </p>
-            <p>Ensino Médio Completo</p>
+        <!-- INFO -->
+        <div class="info-panel">
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <span class="t-dot red"></span>
+                    <span class="t-dot yellow"></span>
+                    <span class="t-dot green"></span>
+                    <span class="t-title">ifconfig · info pessoal</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="t-line"><span class="t-key">nome</span><span class="t-val">Luiz Gustavo de Barros</span></div>
+                    <div class="t-line"><span class="t-key">loc</span><span class="t-val">Campos dos Goytacazes, RJ</span></div>
+                    <div class="t-line"><span class="t-key">role</span><span class="t-val">Analista de NOC &amp; TI Interno</span></div>
+                    <div class="t-line"><span class="t-key">org</span><span class="t-val">Arroba Banda Larga</span></div>
+                    <div class="t-sep"></div>
+                    <div class="t-line"><span class="t-key">edu</span><span class="t-val">Técnico em Informática</span></div>
+                    <div class="t-line"><span class="t-key">inst</span><span class="t-val">Universidade Estácio de Sá</span></div>
+                    <div class="t-line"><span class="t-key">status</span><span class="t-val t-ok">&#x2713; Concluído</span></div>
+                </div>
+            </div>
         </div>
 
-        <!-- COLUNA DIREITA -->
-        <div class="coluna experiencia">
-
-            <div class="job">
-                <h3>Analista de NOC e TI Interno</h3>
-                <span>Arroba Banda Larga</span>
-                <p>
-                    Operação da rede óptica e infraestrutura de TI corporativa,
-                    com foco em monitoramento, troubleshooting avançado,
-                    provisionamento GPON/EPON e ambientes virtualizados.
-                </p>
+        <!-- TIMELINE -->
+        <div class="timeline">
+            <div class="timeline-item fade-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <div class="tl-badge">ATUAL</div>
+                    <h3>Analista de NOC &amp; TI Interno</h3>
+                    <span class="tl-company">Arroba Banda Larga</span>
+                    <p>Operação da rede óptica e infraestrutura de TI corporativa, com foco em monitoramento, troubleshooting avançado, provisionamento GPON/EPON e ambientes virtualizados.</p>
+                    <div class="tl-tags">
+                        <span>GPON/EPON</span><span>Virtualização</span><span>NOC</span><span>Troubleshooting</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="job">
-                <h3>Estagiário de NOC (Nível 3) | TI Interno</h3>
-                <span>Arroba Banda Larga</span>
-                <p>
-                    Atuação em NOC e TI interno com configuração de VPNs,
-                    virtualização, suporte técnico interno e apoio em
-                    troubleshooting de rede.
-                </p>
+            <div class="timeline-item fade-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <h3>Estagiário de NOC N3 | TI Interno</h3>
+                    <span class="tl-company">Arroba Banda Larga</span>
+                    <p>Atuação em NOC e TI interno com configuração de VPNs, virtualização, suporte técnico interno e apoio em troubleshooting de rede.</p>
+                    <div class="tl-tags">
+                        <span>VPN</span><span>Suporte N3</span><span>Redes</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="job">
-                <h3>Estagiário de Suporte N2</h3>
-                <span>Arroba Banda Larga</span>
-                <p>
-                    Suporte remoto avançado, diagnóstico de conectividade,
-                    habilitação de serviços e análise técnica via IXC.
-                </p>
+            <div class="timeline-item fade-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <h3>Estagiário de Suporte N2</h3>
+                    <span class="tl-company">Arroba Banda Larga</span>
+                    <p>Suporte remoto avançado, diagnóstico de conectividade, habilitação de serviços e análise técnica via IXC.</p>
+                    <div class="tl-tags">
+                        <span>IXC</span><span>Suporte N2</span><span>Diagnóstico</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="job">
-                <h3>Estagiário de TI</h3>
-                <span>Microlins</span>
-                <p>
-                    Suporte ao Pacote Office, manutenção de computadores
-                    e administração do sistema HUB ESCOLA.
-                </p>
+            <div class="timeline-item fade-item">
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <h3>Estagiário de TI</h3>
+                    <span class="tl-company">Microlins</span>
+                    <p>Suporte ao Pacote Office, manutenção de computadores e administração do sistema HUB ESCOLA.</p>
+                    <div class="tl-tags">
+                        <span>Hardware</span><span>Office</span><span>Suporte</span>
+                    </div>
+                </div>
             </div>
-
         </div>
 
     </div>
 </section>
 
 
-<section id="software-skills" class="fade">
-    <h2>Software Skills</h2>
-    <div class="skills-grid">
-        <img src="skills-logo/nodejs-yellow.png">
-        <img src="skills-logo/py-yellow.png">
-        <img src="skills-logo/js-yellow.png">
+<!-- SKILLS -->
+<section id="skills" class="fade">
+    <div class="section-tag">// 02 · HABILIDADES</div>
+    <h2 class="section-title">Stack Técnico</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-group fade-item">
+            <div class="skill-group-label">
+                <span class="prompt">$</span> redes &amp; infraestrutura
+            </div>
+            <div class="skill-pills">
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>GPON / EPON</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>TCP/IP</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>VPN</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>Firewall</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>NOC / Monitoramento</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>Virtualização</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>Troubleshooting</span>
+                </div>
+                <div class="skill-pill">
+                    <span class="skill-icon">◈</span>
+                    <span>Roteamento &amp; Switching</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-group fade-item">
+            <div class="skill-group-label">
+                <span class="prompt">$</span> dev &amp; automação
+            </div>
+            <div class="skill-pills with-logos">
+                <div class="skill-pill logo-pill">
+                    <img src="skills-logo/py-yellow.png" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="skill-pill logo-pill">
+                    <img src="skills-logo/js-yellow.png" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-pill logo-pill">
+                    <img src="skills-logo/nodejs-yellow.png" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
+
+<!-- CERTIFICADOS -->
 <section id="certificados" class="fade">
-    <h2>Certificados</h2>
+    <div class="section-tag">// 03 · CERTIFICAÇÕES</div>
+    <h2 class="section-title">Certificados</h2>
 
-    <div class="certificados-conteiner">
+    <div class="certificados-grid">
 
-        <div class="certificado-card">
-            <img src="certificados/CIBERSEGURANÇA: ANATOMIA CLASSICA DE UM CIBERATAQUE.png" alt="Cibersegurança">
-            <div class="certificado-conteudo">
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/CIBERSEGURAN&#xC7;A: ANATOMIA CLASSICA DE UM CIBERATAQUE.png" alt="Cibersegurança">
+                <div class="cert-overlay">
+                    <span>VER</span>
+                </div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Segurança</span>
                 <h3>Cibersegurança: Anatomia Clássica de um Ciberataque</h3>
             </div>
         </div>
 
-        <div class="certificado-card">
-            <img src="certificados/Certificado excel avançado.png" alt="Excel Avançado">
-            <div class="certificado-conteudo">
-                <h3>Excel Avançado</h3>
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/Redes, logica e Estrutura&#xE7;&#xE3;o.png" alt="Redes">
+                <div class="cert-overlay"><span>VER</span></div>
             </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/excel 2021.png" alt="Excel 2021">
-            <div class="certificado-conteudo">
-                <h3>Excel 2021</h3>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/FM2S FUNDAMENTO CIENCIAS DE DADOS.png" alt="Fundamentos de Ciência de Dados">
-            <div class="certificado-conteudo">
-                <h3>Fundamentos de Ciência de Dados</h3>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/FM2S verso.png" alt="Fundamentos de Ciência de Dados Verso">
-            <div class="certificado-conteudo">
-                <h3>Fundamentos de Ciência de Dados</h3>
-                <p>Verso do certificado</p>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/Internet de las cosas.jpg" alt="Internet das Coisas">
-            <div class="certificado-conteudo">
-                <h3>Internet das Coisas</h3>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/PYTHON BASICO.png" alt="Python Básico">
-            <div class="certificado-conteudo">
-                <h3>Python Básico</h3>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/PYTHON POO.png" alt="Python POO">
-            <div class="certificado-conteudo">
-                <h3>Python: Programação Orientada a Objetos (POO)</h3>
-            </div>
-        </div>
-
-        <div class="certificado-card">
-            <img src="certificados/Redes, logica e Estruturação.png" alt="Redes, Lógica e Estruturação">
-            <div class="certificado-conteudo">
+            <div class="cert-info">
+                <span class="cert-cat">Redes</span>
                 <h3>Redes, Lógica e Estruturação</h3>
             </div>
         </div>
 
-        <div class="certificado-card">
-            <img src="certificados/TI COMO ELEMENTO ESTRATÉGICO NAS ORGANIZAÇOES.png" alt="TI como Elemento Estratégico">
-            <div class="certificado-conteudo">
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/Internet de las cosas.jpg" alt="IoT">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">IoT</span>
+                <h3>Internet das Coisas</h3>
+            </div>
+        </div>
+
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/PYTHON BASICO.png" alt="Python Básico">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Desenvolvimento</span>
+                <h3>Python Básico</h3>
+            </div>
+        </div>
+
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/PYTHON POO.png" alt="Python POO">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Desenvolvimento</span>
+                <h3>Python: Programação Orientada a Objetos</h3>
+            </div>
+        </div>
+
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/TI COMO ELEMENTO ESTRAT&#xC9;GICO NAS ORGANIZA&#xC7;OES.png" alt="TI Estratégico">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Gestão</span>
                 <h3>TI como Elemento Estratégico nas Organizações</h3>
             </div>
         </div>
 
-        <div class="certificado-card">
-            <img src="certificados/fundamentos de ti hardware e software.png" alt="Fundamentos de TI">
-            <div class="certificado-conteudo">
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/FM2S FUNDAMENTO CIENCIAS DE DADOS.png" alt="Ciência de Dados">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Dados</span>
+                <h3>Fundamentos de Ciência de Dados</h3>
+            </div>
+        </div>
+
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/fundamentos de ti hardware e software.png" alt="Fundamentos TI">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Infraestrutura</span>
                 <h3>Fundamentos de TI: Hardware e Software</h3>
             </div>
         </div>
 
-        <div class="certificado-card">
-            <img src="certificados/governança de dados.jpg" alt="Governança de Dados">
-            <div class="certificado-conteudo">
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/governan&#xE7;a de dados.jpg" alt="Governança de Dados">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Dados</span>
                 <h3>Governança de Dados</h3>
             </div>
         </div>
 
-        <div class="certificado-card">
-            <img src="certificados/governança verso.jpg" alt="Governança de Dados Verso">
-            <div class="certificado-conteudo">
-                <h3>Governança de Dados</h3>
-                <p>Verso do certificado</p>
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/Certificado excel avan&#xE7;ado.png" alt="Excel Avançado">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Ferramentas</span>
+                <h3>Excel Avançado</h3>
+            </div>
+        </div>
+
+        <div class="cert-card fade-item">
+            <div class="cert-img-wrap">
+                <img src="certificados/excel 2021.png" alt="Excel 2021">
+                <div class="cert-overlay"><span>VER</span></div>
+            </div>
+            <div class="cert-info">
+                <span class="cert-cat">Ferramentas</span>
+                <h3>Excel 2021</h3>
             </div>
         </div>
 
     </div>
 </section>
 
-
 </main>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-close">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+</div>
+
 <footer>
-    <p>Em breve novas atualizações</p>
+    <div class="footer-inner">
+        <p class="footer-cmd">
+            <span class="prompt">$</span>
+            ping luizgustavobarros32@gmail.com
+            <span class="blink">▮</span>
+        </p>
+        <p class="footer-note">Luiz Gustavo · 2026 · Campos dos Goytacazes, RJ</p>
+    </div>
 </footer>
 
 <script src="script.js"></script>
