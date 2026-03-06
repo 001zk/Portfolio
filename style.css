@@ -1044,32 +1044,161 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .footer-gh:hover { color: var(--amber); }
 .footer-gh:hover img { opacity: 0.9; }
 
+
 /* ══════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — 1060px (tablet landscape)
 ══════════════════════════════════ */
 @media (max-width: 1060px) {
-    .sobre-grid     { grid-template-columns: 1fr; }
-    .contato-grid   { grid-template-columns: 1fr; gap: 40px; }
-    .dev-cards      { grid-template-columns: 1fr 1fr; }
+    .sobre-grid    { grid-template-columns: 1fr; gap: 36px; }
+    .contato-grid  { grid-template-columns: 1fr; gap: 40px; }
+    .dev-cards     { grid-template-columns: 1fr 1fr; }
+    .hero-metrics  { padding: 18px 22px; }
+    .metric        { padding: 0 18px; }
 }
+
+/* ══════════════════════════════════
+   RESPONSIVE — 900px (tablet portrait)
+══════════════════════════════════ */
 @media (max-width: 900px) {
     .sidebar        { display: none; }
     .mobile-header  { display: flex; }
     .mob-overlay    { display: block; }
+
     .content-wrap   { margin-left: 0; padding-top: 58px; }
     .site-footer    { margin-left: 0; padding: 16px 22px; }
-    .section        { padding: 60px 22px; }
-    .tl-item        { grid-template-columns: 0 30px 1fr; }
+    .section        { padding: 56px 22px; }
+
+    .section-header { margin-bottom: 36px; gap: 12px; }
+    .sec-title      { font-size: 28px; }
+    .sec-tag        { font-size: 10px; }
+
+    .hero-section   { padding: 48px 22px; min-height: auto; }
+    .hero-name      { font-size: 72px; letter-spacing: -3px; margin-bottom: 16px; }
+    .hero-role      { font-size: 15px; margin-bottom: 14px; }
+    .hero-chips     { gap: 6px; margin-bottom: 18px; }
+    .hero-desc      { font-size: 13px; max-width: 100%; margin-bottom: 28px; }
+    .hero-metrics   { width: 100%; padding: 16px 18px; margin-bottom: 28px; }
+    .metric         { padding: 0 16px; }
+    .metric-num     { font-size: 28px; }
+    .metric-label   { font-size: 10px; }
+    .hero-socials   { flex-wrap: wrap; gap: 8px; }
+    .hero-soc-btn   { padding: 9px 16px; font-size: 12px; }
+
+    .sobre-text p   { font-size: 13px; }
+    .terminal-card  { font-size: 11px; }
+    .tc-body        { padding: 14px; }
+    .tc-field       { font-size: 11px; gap: 8px; }
+    .tc-k           { min-width: 46px; }
+
+    .tl-item        { grid-template-columns: 0 28px 1fr; }
     .tl-left        { display: none; }
-    .skills-layout  { grid-template-columns: 1fr; }
+    .tl-right       { padding: 0 0 40px 20px; }
+    .tl-right h3    { font-size: 14px; }
+    .tl-right p     { font-size: 12px; }
+    .tl-tenure      { font-size: 10px; }
+
+    .skills-layout  { grid-template-columns: 1fr; gap: 36px; }
     .full-width     { grid-column: 1; }
-    .dev-cards      { grid-template-columns: 1fr; }
+    .dev-cards      { grid-template-columns: 1fr; gap: 12px; }
+    .skill-cat-name { font-size: 12px; }
+
+    .filter-tabs    { gap: 6px; }
+    .ftab           { font-size: 10px; padding: 5px 11px; }
+    .certs-grid     { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .cc-img-wrap img { height: 150px; }
+
+    .contato-text h3  { font-size: 32px; }
+    .contato-text p   { font-size: 13px; }
+    .contato-card     { padding: 15px 16px; }
+
+    .footer-inner   { flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* ══════════════════════════════════
+   RESPONSIVE — 600px (mobile)
+══════════════════════════════════ */
 @media (max-width: 600px) {
-    .hero-name      { font-size: 58px; letter-spacing: -3px; }
-    .hero-metrics   { flex-direction: column; align-items: flex-start; }
-    .metric-divider { width: 100%; height: 1px; }
-    .metric         { padding: 10px 0; }
-    .certs-grid     { grid-template-columns: 1fr; }
-    .hero-socials   { flex-direction: column; }
+    .section        { padding: 48px 18px; }
+
+    .hero-section   { padding: 36px 18px; }
+    .hero-eyebrow   { margin-bottom: 18px; }
+    .eyebrow-tag    { font-size: 10px; letter-spacing: 2px; padding: 4px 10px; }
+    .hero-name      { font-size: 52px; letter-spacing: -2px; margin-bottom: 14px; }
+    .hero-role      { font-size: 14px; }
+    .hero-chips span { font-size: 10px; padding: 3px 8px; }
+    .hero-desc      { font-size: 12px; line-height: 1.8; }
+    .hero-metrics   { flex-direction: column; align-items: flex-start; gap: 0; padding: 16px; width: 100%; }
+    .metric-divider { width: 100%; height: 1px; margin: 2px 0; }
+    .metric         { padding: 12px 0; }
+    .metric-num     { font-size: 32px; }
+    .hero-socials   { flex-direction: column; gap: 8px; }
+    .hero-soc-btn   { justify-content: center; width: 100%; }
+
+    .sec-title      { font-size: 24px; letter-spacing: -0.5px; }
+    .section-header { gap: 10px; }
+
+    .sobre-text p   { font-size: 12px; line-height: 1.85; }
+    .terminal-card  { overflow-x: auto; }
+    .tc-body        { padding: 12px; min-width: 280px; }
+    .tc-field       { font-size: 10px; }
+    .tc-k           { min-width: 42px; font-size: 10px; }
+
+    .tl-item        { grid-template-columns: 0 24px 1fr; }
+    .tl-right       { padding: 0 0 36px 16px; }
+    .tl-right h3    { font-size: 13px; letter-spacing: 0; }
+    .tl-right p     { font-size: 12px; }
+    .tl-chips       { gap: 5px; }
+    .tl-chips span  { font-size: 10px; padding: 2px 7px; }
+    .tl-tenure      { font-size: 10px; padding: 2px 7px; }
+
+    .skill-cat-header { margin-bottom: 16px; }
+    .sb-label-row   { font-size: 11px; }
+    .dev-card       { padding: 16px; }
+    .dev-card-top   { gap: 10px; }
+    .dev-card-top img { width: 26px; height: 26px; }
+    .dev-name       { font-size: 13px; }
+    .dev-desc       { font-size: 11px; line-height: 1.7; }
+    .dev-tags span  { font-size: 10px; }
+
+    .certs-grid     { grid-template-columns: 1fr; gap: 10px; }
+    .cc-img-wrap img { height: 140px; }
+    .filter-tabs    { gap: 5px; }
+    .ftab           { font-size: 10px; padding: 5px 9px; }
+    .cc-body        { padding: 11px 13px 13px; }
+    .cc-tag         { font-size: 9px; }
+    .cc-body h3     { font-size: 12px; }
+
+    .contato-text h3  { font-size: 28px; letter-spacing: -1px; }
+    .contato-text p   { font-size: 12px; }
+    .contato-cmd      { font-size: 11px; flex-wrap: wrap; gap: 4px; }
+    .cc-handle        { font-size: 12px; }
+    .contato-card     { padding: 14px; gap: 12px; }
+    .cc-left img      { width: 24px; }
+
+    .lb-wrap img    { max-width: 96vw; }
+    .lb-close       { top: -40px; width: 32px; height: 32px; font-size: 12px; }
+
+    .site-footer    { padding: 14px 18px; }
+    .footer-inner   { gap: 6px; }
+    .footer-gh      { font-size: 11px; }
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE — 400px (mobile pequeno)
+══════════════════════════════════ */
+@media (max-width: 400px) {
+    .section         { padding: 40px 14px; }
+    .hero-section    { padding: 28px 14px; }
+    .hero-name       { font-size: 44px; letter-spacing: -1.5px; }
+    .eyebrow-tag     { font-size: 9px; letter-spacing: 1.5px; }
+    .hero-role       { font-size: 13px; }
+    .hero-chips span { font-size: 9px; padding: 3px 7px; }
+    .metric-num      { font-size: 28px; }
+    .sec-title       { font-size: 22px; }
+    .filter-tabs     { gap: 4px; }
+    .ftab            { padding: 4px 8px; }
+    .certs-grid      { gap: 8px; }
+    .cc-img-wrap img { height: 120px; }
+    .contato-text h3 { font-size: 24px; }
+    .site-footer     { padding: 12px 14px; }
 }
