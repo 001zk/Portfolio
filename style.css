@@ -1090,12 +1090,13 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     .tc-field       { font-size: 11px; gap: 8px; }
     .tc-k           { min-width: 46px; }
 
-    .tl-item        { grid-template-columns: 0 28px 1fr; }
+    .tl-item        { grid-template-columns: 20px 1fr; }
     .tl-left        { display: none; }
-    .tl-right       { padding: 0 0 40px 20px; }
-    .tl-right h3    { font-size: 14px; }
-    .tl-right p     { font-size: 12px; }
-    .tl-tenure      { font-size: 10px; }
+    .tl-connector   { padding-top: 4px; }
+    .tl-right       { padding: 0 0 40px 16px; overflow-wrap: break-word; word-break: break-word; }
+    .tl-right h3    { font-size: 14px; overflow-wrap: break-word; }
+    .tl-right p     { font-size: 12px; overflow-wrap: break-word; word-break: normal; }
+    .tl-chips span  { white-space: nowrap; }
 
     .skills-layout  { grid-template-columns: 1fr; gap: 36px; }
     .full-width     { grid-column: 1; }
@@ -1143,12 +1144,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     .tc-field       { font-size: 10px; }
     .tc-k           { min-width: 42px; font-size: 10px; }
 
-    .tl-item        { grid-template-columns: 0 24px 1fr; }
-    .tl-right       { padding: 0 0 36px 16px; }
-    .tl-right h3    { font-size: 13px; letter-spacing: 0; }
-    .tl-right p     { font-size: 12px; }
+    .tl-item        { grid-template-columns: 18px 1fr; }
+    .tl-right       { padding: 0 0 36px 14px; overflow-wrap: break-word; word-break: break-word; }
+    .tl-right h3    { font-size: 13px; letter-spacing: 0; overflow-wrap: break-word; }
+    .tl-right p     { font-size: 12px; word-break: normal; overflow-wrap: break-word; }
     .tl-chips       { gap: 5px; }
-    .tl-chips span  { font-size: 10px; padding: 2px 7px; }
+    .tl-chips span  { font-size: 10px; padding: 2px 7px; white-space: nowrap; }
     .tl-tenure      { font-size: 10px; padding: 2px 7px; }
 
     .skill-cat-header { margin-bottom: 16px; }
