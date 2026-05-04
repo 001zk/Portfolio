@@ -1,118 +1,106 @@
 document.body.classList.add('js-on');
 
-// sidebar active link
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.sidebar-nav a, .mobile-menu a');
+const sbLinks  = document.querySelectorAll('.sb-link');
 
-function setActive() {
+function updateActive() {
   let current = '';
   sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 160) current = s.id;
+    if (window.scrollY >= s.offsetTop - 180) current = s.id;
   });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  sbLinks.forEach(a => {
+    a.classList.toggle('active', a.dataset.section === current);
   });
 }
-window.addEventListener('scroll', setActive, { passive: true });
-setActive();
+window.addEventListener('scroll', updateActive, { passive: true });
+updateActive();
 
-// reveal on scroll
-const revealObserver = new IntersectionObserver(entries => {
+const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
+      revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal-up').forEach(el => revealObs.observe(el));
 
-document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-
-// mobile menu
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-hamburger?.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu?.classList.toggle('open');
+const menuBtn  = document.getElementById('mob-menu-btn');
+const overlay  = document.getElementById('mob-overlay');
+menuBtn?.addEventListener('click', () => {
+  menuBtn.classList.toggle('open');
+  overlay?.classList.toggle('open');
 });
-
-document.querySelectorAll('.mobile-menu a').forEach(a => {
+document.querySelectorAll('.mob-link').forEach(a => {
   a.addEventListener('click', () => {
-    hamburger?.classList.remove('open');
-    mobileMenu?.classList.remove('open');
+    menuBtn?.classList.remove('open');
+    overlay?.classList.remove('open');
   });
 });
 
-// tenure counter
-(function () {
-  const el = document.getElementById('tenure');
-  if (!el) return;
-  const start = new Date(2022, 0, 1);
-  const now   = new Date();
-  const years = now.getFullYear() - start.getFullYear();
-  el.textContent = years + '+';
-})();
+function animateCount(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const duration = 1200;
+  const step = target / (duration / 16);
+  let current = 0;
+  const tick = () => {
+    current = Math.min(current + step, target);
+    el.textContent = Math.floor(current);
+    if (current < target) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.metric-num[data-count]').forEach(el => counterObs.observe(el));
 
-// cert count
-(function () {
-  const el = document.getElementById('cert-count');
-  if (!el) return;
-  const count = document.querySelectorAll('.cert-card').length;
-  el.textContent = count + '+';
-})();
-
-// modal
-const modalOverlay = document.getElementById('modal-overlay');
-const modalImg     = document.getElementById('modal-img');
-const modalClose   = document.getElementById('modal-close');
+const lightbox  = document.getElementById('lightbox');
+const lbImg     = document.getElementById('lb-img');
+const lbClose   = document.getElementById('lb-close');
+const lbBackdrop = lightbox?.querySelector('.lb-backdrop');
 
 document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
-    const src = card.querySelector('.cert-thumb')?.src;
-    if (src && modalImg && modalOverlay) {
-      modalImg.src = src;
-      modalOverlay.classList.add('open');
+    const src = card.querySelector('img')?.src;
+    if (src && lightbox && lbImg) {
+      lbImg.src = src;
+      lightbox.classList.add('open');
     }
   });
 });
+lbClose?.addEventListener('click',   () => lightbox?.classList.remove('open'));
+lbBackdrop?.addEventListener('click', () => lightbox?.classList.remove('open'));
+document.addEventListener('keydown',  e => { if (e.key === 'Escape') lightbox?.classList.remove('open'); });
 
-modalClose?.addEventListener('click', () => modalOverlay?.classList.remove('open'));
-modalOverlay?.addEventListener('click', e => {
-  if (e.target === modalOverlay) modalOverlay.classList.remove('open');
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') modalOverlay?.classList.remove('open');
-});
-
-// cert filters
-const certFilters = document.querySelectorAll('.cert-filter');
-certFilters.forEach(btn => {
+document.querySelectorAll('.ftab').forEach(btn => {
   btn.addEventListener('click', () => {
-    certFilters.forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const cat = btn.dataset.cat;
+    const cat = btn.dataset.filter;
     document.querySelectorAll('.cert-card').forEach(card => {
       card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
     });
   });
 });
 
-// project filters
-const projFilters = document.querySelectorAll('.proj-filter');
-projFilters.forEach(btn => {
+document.querySelectorAll('.proj-tab').forEach(btn => {
   btn.addEventListener('click', () => {
-    projFilters.forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const lang = btn.dataset.filter;
+    const lang = btn.dataset.lang;
     const filtered = lang === 'all'
-      ? window._allRepos
+      ? window._allRepos || []
       : (window._allRepos || []).filter(r => r.language === lang);
     renderCards(filtered);
   });
 });
 
-// github projects
 const LANG_COLORS = {
   JavaScript: '#f1e05a',
   TypeScript: '#3178c6',
@@ -138,12 +126,11 @@ function renderCards(repos) {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
   if (!repos.length) {
-    grid.innerHTML = `<p style="color:var(--text-muted);font-family:var(--mono);font-size:.85rem">Nenhum projeto encontrado.</p>`;
+    grid.innerHTML = `<p class="proj-status">Nenhum projeto encontrado.</p>`;
     return;
   }
-  grid.innerHTML = repos.map((r, i) => `
-    <a class="proj-card reveal-up" href="${r.html_url}" target="_blank" rel="noopener noreferrer"
-       style="transition-delay:${i * 60}ms">
+  grid.innerHTML = repos.map(r => `
+    <a class="proj-card" href="${r.html_url}" target="_blank" rel="noopener noreferrer">
       <div class="proj-card-header">
         <span class="proj-name">${r.name}</span>
         <span class="proj-owner">@${r._owner}</span>
@@ -158,36 +145,24 @@ function renderCards(repos) {
       </div>
     </a>
   `).join('');
-
-  grid.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
 }
 
 async function loadProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
-
   try {
-    const [r1, r2] = await Promise.all([
-      fetchRepos('001zk'),
-      fetchRepos('Luiz-alt001'),
-    ]);
-    const all = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-    window._allRepos = all;
-    renderCards(all);
+    const [r1, r2] = await Promise.all([fetchRepos('001zk'), fetchRepos('Luiz-alt001')]);
+    window._allRepos = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    renderCards(window._allRepos);
   } catch {
-    if (grid) {
-      grid.innerHTML = `<p style="color:var(--text-muted);font-family:var(--mono);font-size:.85rem">Erro ao carregar repositórios.</p>`;
-    }
+    if (grid) grid.innerHTML = `<p class="proj-status">Erro ao carregar repositórios.</p>`;
   }
 }
 
-const projectsSection = document.getElementById('projetos');
-if (projectsSection) {
-  const projectsObserver = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      loadProjects();
-      projectsObserver.disconnect();
-    }
+const projSection = document.getElementById('projetos');
+if (projSection) {
+  const projObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { loadProjects(); projObs.disconnect(); }
   }, { threshold: 0.1 });
-  projectsObserver.observe(projectsSection);
+  projObs.observe(projSection);
 }
