@@ -1,649 +1,613 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luiz Gustavo — Analista de NOC & Redes</title>
-    <meta name="description" content="Analista de NOC e Infraestrutura de Redes — Campos dos Goytacazes, RJ">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self';">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luiz Gustavo — Analista de NOC &amp; Redes</title>
+  <meta name="description" content="Analista de NOC e Infraestrutura de Redes — Campos dos Goytacazes, RJ">
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 style-src  'self' https://fonts.googleapis.com;
+                 font-src   https://fonts.gstatic.com;
+                 img-src    'self' data:;
+                 script-src 'self';
+                 connect-src https://api.github.com;">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- SIDEBAR NAV -->
+    
 <nav class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-        <span class="sb-initials">LG</span>
-    </div>
-    <ul class="sidebar-nav">
-        <li><a href="#hero"        class="sb-link active" data-section="hero">        <span class="sb-num">00</span><span class="sb-label">Início</span></a></li>
-        <li><a href="#sobre"       class="sb-link"        data-section="sobre">       <span class="sb-num">01</span><span class="sb-label">Sobre</span></a></li>
-        <li><a href="#experiencia" class="sb-link"        data-section="experiencia"> <span class="sb-num">02</span><span class="sb-label">Experiência</span></a></li>
-        <li><a href="#skills"      class="sb-link"        data-section="skills">      <span class="sb-num">03</span><span class="sb-label">Skills</span></a></li>
-        <li><a href="#certs"       class="sb-link"        data-section="certs">       <span class="sb-num">04</span><span class="sb-label">Formação</span></a></li>
-        <li><a href="#contato"     class="sb-link"        data-section="contato">     <span class="sb-num">05</span><span class="sb-label">Contato</span></a></li>
-    </ul>
-    <div class="sidebar-status">
-        <span class="status-pulse"></span>
-        <span class="status-label">DISPONÍVEL</span>
-    </div>
+  <div class="sidebar-logo">
+    <span class="sb-initials">LG</span>
+  </div>
+
+  <ul class="sidebar-nav">
+    <li><a href="#hero"        class="sb-link active" data-section="hero">       <span class="sb-num">00</span><span class="sb-label">Início</span></a></li>
+    <li><a href="#sobre"       class="sb-link" data-section="sobre">              <span class="sb-num">01</span><span class="sb-label">Sobre</span></a></li>
+    <li><a href="#experiencia" class="sb-link" data-section="experiencia">        <span class="sb-num">02</span><span class="sb-label">Experiência</span></a></li>
+    <li><a href="#skills"      class="sb-link" data-section="skills">             <span class="sb-num">03</span><span class="sb-label">Skills</span></a></li>
+    <li><a href="#projetos"    class="sb-link" data-section="projetos">           <span class="sb-num">04</span><span class="sb-label">Projetos</span></a></li>
+    <li><a href="#certs"       class="sb-link" data-section="certs">              <span class="sb-num">05</span><span class="sb-label">Formação</span></a></li>
+    <li><a href="#contato"     class="sb-link" data-section="contato">            <span class="sb-num">06</span><span class="sb-label">Contato</span></a></li>
+  </ul>
+
+  <div class="sidebar-status">
+    <span class="status-pulse"></span>
+    <span class="status-label">DISPONÍVEL</span>
+  </div>
 </nav>
 
-<!-- MOBILE HEADER -->
 <header class="mobile-header" id="mobile-header">
-    <span class="mob-logo">LG</span>
-    <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+  <span class="mob-logo">LG</span>
+  <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
-<!-- MOBILE NAV OVERLAY -->
+<!-- Mobile overlay -->
 <div class="mob-overlay" id="mob-overlay">
-    <ul>
-        <li><a href="#hero"        class="mob-link">00 — Início</a></li>
-        <li><a href="#sobre"       class="mob-link">01 — Sobre</a></li>
-        <li><a href="#experiencia" class="mob-link">02 — Experiência</a></li>
-        <li><a href="#skills"      class="mob-link">03 — Skills</a></li>
-        <li><a href="#certs"       class="mob-link">04 — Formação</a></li>
-        <li><a href="#contato"     class="mob-link">05 — Contato</a></li>
-    </ul>
+  <ul>
+    <li><a href="#hero"        class="mob-link">00 — Início</a></li>
+    <li><a href="#sobre"       class="mob-link">01 — Sobre</a></li>
+    <li><a href="#experiencia" class="mob-link">02 — Experiência</a></li>
+    <li><a href="#skills"      class="mob-link">03 — Skills</a></li>
+    <li><a href="#projetos"    class="mob-link">04 — Projetos</a></li>
+    <li><a href="#certs"       class="mob-link">05 — Formação</a></li>
+    <li><a href="#contato"     class="mob-link">06 — Contato</a></li>
+  </ul>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content-wrap">
 
-    <!-- ══════════════════════════
-         00 · HERO
-    ══════════════════════════ -->
-    <section id="hero" class="section hero-section">
+  <section id="hero" class="section hero-section">
 
-        <div class="hero-eyebrow reveal-up">
-            <span class="eyebrow-tag">NOC · INFRAESTRUTURA · REDES</span>
-        </div>
+    <div class="hero-eyebrow reveal-up">
+      <span class="eyebrow-tag">NOC · INFRAESTRUTURA · REDES</span>
+    </div>
 
-        <h1 class="hero-name reveal-up delay-1">
-            Luiz<br><span class="name-accent">Gustavo.</span>
-        </h1>
+    <h1 class="hero-name reveal-up delay-1">
+      Luiz<br><span class="name-accent">Gustavo.</span>
+    </h1>
 
-        <p class="hero-role reveal-up delay-2">
-            Analista de NOC &amp; Infraestrutura de Redes
+    <p class="hero-role reveal-up delay-2">Analista de NOC &amp; Infraestrutura de Redes</p>
+
+    <div class="hero-chips reveal-up delay-2">
+      <span>MikroTik</span>
+      <span>GPON / EPON</span>
+      <span>IXC</span>
+      <span>Zabbix</span>
+      <span>VPN</span>
+      <span>Apps Script</span>
+    </div>
+
+    <p class="hero-desc reveal-up delay-3">
+      Experiência em operação de redes ópticas GPON/EPON, infraestrutura de TI
+      corporativa, virtualização e troubleshooting avançado. Campos dos Goytacazes, RJ.
+    </p>
+
+    <div class="hero-metrics reveal-up delay-3">
+      <div class="metric">
+        <span class="metric-num" data-count="3">0</span><span class="metric-unit">+</span>
+        <span class="metric-label">Anos de experiência</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num" data-count="11">0</span><span class="metric-unit">+</span>
+        <span class="metric-label">Certificados</span>
+      </div>
+    </div>
+
+    <div class="hero-socials reveal-up delay-4">
+      <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/"
+         target="_blank" rel="noopener" class="hero-soc-btn">
+        <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"> LinkedIn
+      </a>
+      <a href="https://github.com/001zk"
+         target="_blank" rel="noopener" class="hero-soc-btn secondary">
+        <img src="logo-ctt/github-yellow.png" alt="GitHub"> GitHub
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com"
+         target="_blank" rel="noopener" class="hero-soc-btn secondary">
+        <img src="logo-ctt/gmail-yellow.png" alt="Gmail"> E-mail
+      </a>
+    </div>
+
+  </section>
+
+  <section id="sobre" class="section">
+
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 01</span>
+      <h2 class="sec-title">Sobre</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="sobre-grid">
+
+      <div class="sobre-text reveal-up">
+        <p>
+          Profissional de TI com trajetória focada em <strong>redes e operações de NOC</strong>,
+          iniciada como estagiário de suporte e evoluindo até a posição de Analista na
+          <strong>Arroba Banda Larga</strong>, provedor de internet em Campos dos Goytacazes, RJ.
         </p>
-
-        <div class="hero-chips reveal-up delay-2">
-            <span>MikroTik</span>
-            <span>GPON / EPON</span>
-            <span>IXC</span>
-            <span>Zabbix</span>
-            <span>VPN</span>
-            <span>Apps Script</span>
-        </div>
-
-        <p class="hero-desc reveal-up delay-3">
-            Experiência em operação de redes ópticas GPON/EPON, infraestrutura de TI
-            corporativa, virtualização e troubleshooting avançado. Campos dos Goytacazes, RJ.
+        <p>
+          Atuo na operação de <strong>redes ópticas GPON/EPON</strong>, monitoramento de
+          infraestrutura, provisionamento de ONU/ONT, configuração de VPNs, ambientes
+          virtualizados e troubleshooting avançado de camadas 2 e 3.
         </p>
+        <p>
+          Complementarmente, desenvolvo <strong>scripts de automação</strong> com Python e
+          JavaScript, incluindo soluções via Google Apps Script para integração entre planilhas,
+          formulários e ferramentas internas — reduzindo trabalho manual em processos operacionais.
+        </p>
+      </div>
 
-        <div class="hero-metrics reveal-up delay-3">
-            <div class="metric">
-                <span class="metric-num" data-count="3">0</span>
-                <span class="metric-unit">+</span>
-                <span class="metric-label">Anos de experiência</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric">
-                <span class="metric-num" data-count="11">0</span>
-                <span class="metric-unit">+</span>
-                <span class="metric-label">Cursos</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric">
-                <span class="metric-num" data-count="4">0</span>
-                <span class="metric-unit"></span>
-                <span class="metric-label">Cargos na área de TI</span>
-            </div>
+      <div class="terminal-card reveal-up delay-1">
+        <div class="tc-header">
+          <div class="tc-dots">
+            <span class="tcd red"></span>
+            <span class="tcd yellow"></span>
+            <span class="tcd green"></span>
+          </div>
+          <span class="tc-title">whoami</span>
         </div>
-
-        <div class="hero-socials reveal-up delay-4">
-            <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" rel="noopener noreferrer" class="hero-soc-btn">
-                <img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"> LinkedIn
-            </a>
-            <a href="https://github.com/001zk" target="_blank" rel="noopener noreferrer" class="hero-soc-btn secondary">
-                <img src="logo-ctt/github-yellow.png" alt="GitHub"> GitHub
-            </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" rel="noopener noreferrer" class="hero-soc-btn secondary">
-                <img src="logo-ctt/gmail-yellow.png" alt="Gmail"> E-mail
-            </a>
+        <div class="tc-body">
+          <div class="tc-line">
+            <span class="tc-prompt">~$</span>
+            <span class="tc-cmd">cat info.conf</span>
+          </div>
+          <div class="tc-output">
+            <div class="tc-field"><span class="tc-k">nome</span>   <span class="tc-sep">:</span><span class="tc-v">Luiz Gustavo de Barros</span></div>
+            <div class="tc-field"><span class="tc-k">local</span>  <span class="tc-sep">:</span><span class="tc-v">Campos dos Goytacazes, RJ</span></div>
+            <div class="tc-field"><span class="tc-k">cargo</span>  <span class="tc-sep">:</span><span class="tc-v accent">Analista NOC &amp; TI Interno</span></div>
+            <div class="tc-field"><span class="tc-k">empresa</span><span class="tc-sep">:</span><span class="tc-v">Arroba Banda Larga</span></div>
+            <div class="tc-field"><span class="tc-k">foco</span>   <span class="tc-sep">:</span><span class="tc-v">GPON · VPN · Automação</span></div>
+          </div>
+          <div class="tc-line mt">
+            <span class="tc-prompt">~$</span>
+            <span class="tc-cmd">cat formacao.conf</span>
+          </div>
+          <div class="tc-output">
+            <div class="tc-field"><span class="tc-k">curso</span> <span class="tc-sep">:</span><span class="tc-v">Técnico em Informática</span></div>
+            <div class="tc-field"><span class="tc-k">inst</span>  <span class="tc-sep">:</span><span class="tc-v">Estácio de Sá</span></div>
+            <div class="tc-field"><span class="tc-k">status</span><span class="tc-sep">:</span><span class="tc-v green">✓ Concluído</span></div>
+          </div>
+          <div class="tc-line mt">
+            <span class="tc-prompt">~$</span>
+            <span class="tc-cursor">▮</span>
+          </div>
         </div>
+      </div>
 
-    </section>
+    </div>
+  </section>
 
+  <section id="experiencia" class="section">
 
-    <!-- ══════════════════════════
-         01 · SOBRE
-    ══════════════════════════ -->
-    <section id="sobre" class="section">
-        <div class="section-header reveal-up">
-            <span class="sec-tag">// 01</span>
-            <h2 class="sec-title">Sobre</h2>
-            <div class="sec-line"></div>
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 02</span>
+      <h2 class="sec-title">Experiência</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="timeline-wrap">
+
+      <div class="tl-item reveal-up">
+        <div class="tl-left">
+          <span class="tl-badge current">Atual</span>
+          <span class="tl-company">Arroba Banda Larga</span>
         </div>
-
-        <div class="sobre-grid">
-            <div class="sobre-text reveal-up">
-                <p>
-                    Profissional de TI com trajetória focada em <strong>redes e operações de NOC</strong>,
-                    iniciada como estagiário de suporte e evoluindo até a posição de Analista na
-                    <strong>Arroba Banda Larga</strong>, provedor de internet em Campos dos Goytacazes, RJ.
-                </p>
-                <p>
-                    Atuo na operação de <strong>redes ópticas GPON/EPON</strong>, monitoramento de infraestrutura,
-                    provisionamento de ONU/ONT, configuração de VPNs, ambientes virtualizados e
-                    troubleshooting avançado de camadas 2 e 3.
-                </p>
-                <p>
-                    Complementarmente, desenvolvo <strong>scripts de automação</strong> com Python e JavaScript,
-                    incluindo soluções via Google Apps Script para integração entre planilhas,
-                    formulários e ferramentas internas — reduzindo trabalho manual em processos operacionais.
-                </p>
-            </div>
-
-            <div class="terminal-card reveal-up delay-1">
-                <div class="tc-header">
-                    <div class="tc-dots">
-                        <span class="tcd red"></span>
-                        <span class="tcd yellow"></span>
-                        <span class="tcd green"></span>
-                    </div>
-                    <span class="tc-title">whoami</span>
-                </div>
-                <div class="tc-body">
-                    <div class="tc-line">
-                        <span class="tc-prompt">~$</span>
-                        <span class="tc-cmd">cat info.conf</span>
-                    </div>
-                    <div class="tc-output">
-                        <div class="tc-field"><span class="tc-k">nome</span><span class="tc-sep">:</span><span class="tc-v">Luiz Gustavo de Barros</span></div>
-                        <div class="tc-field"><span class="tc-k">local</span><span class="tc-sep">:</span><span class="tc-v">Campos dos Goytacazes, RJ</span></div>
-                        <div class="tc-field"><span class="tc-k">cargo</span><span class="tc-sep">:</span><span class="tc-v amber">Analista de NOC &amp; TI Interno</span></div>
-                        <div class="tc-field"><span class="tc-k">empresa</span><span class="tc-sep">:</span><span class="tc-v">Arroba Banda Larga</span></div>
-                        <div class="tc-field"><span class="tc-k">foco</span><span class="tc-sep">:</span><span class="tc-v">GPON · VPN · Automação</span></div>
-                    </div>
-                    <div class="tc-line mt">
-                        <span class="tc-prompt">~$</span>
-                        <span class="tc-cmd">cat formacao.conf</span>
-                    </div>
-                    <div class="tc-output">
-                        <div class="tc-field"><span class="tc-k">curso</span><span class="tc-sep">:</span><span class="tc-v">Técnico em Informática</span></div>
-                        <div class="tc-field"><span class="tc-k">inst</span><span class="tc-sep">:</span><span class="tc-v">Universidade Estácio de Sá</span></div>
-                        <div class="tc-field"><span class="tc-k">status</span><span class="tc-sep">:</span><span class="tc-v green-text">✓ Concluído</span></div>
-                    </div>
-                    <div class="tc-line mt">
-                        <span class="tc-prompt">~$</span>
-                        <span class="tc-cursor-blink">▮</span>
-                    </div>
-                </div>
-            </div>
+        <div class="tl-connector">
+          <div class="tl-node active"></div>
+          <div class="tl-line"></div>
         </div>
-    </section>
-
-
-    <!-- ══════════════════════════
-         02 · EXPERIÊNCIA
-    ══════════════════════════ -->
-    <section id="experiencia" class="section">
-        <div class="section-header reveal-up">
-            <span class="sec-tag">// 02</span>
-            <h2 class="sec-title">Experiência</h2>
-            <div class="sec-line"></div>
+        <div class="tl-right">
+          <h3>Analista de NOC &amp; TI Interno</h3>
+          <span class="tl-tenure">out 2025 – presente</span>
+          <p>Operação da rede óptica e infraestrutura de TI corporativa, com foco em monitoramento,
+             troubleshooting avançado, provisionamento GPON/EPON e ambientes virtualizados.</p>
+          <div class="tl-chips">
+            <span>GPON / EPON</span><span>Virtualização</span><span>NOC</span>
+            <span>Troubleshooting L2/L3</span><span>TI Corporativo</span>
+          </div>
         </div>
+      </div>
 
-        <div class="timeline-wrap">
-
-            <div class="tl-item reveal-up">
-                <div class="tl-left">
-                    <span class="tl-badge current">Atual</span>
-                    <span class="tl-company">Arroba Banda Larga</span>
-                </div>
-                <div class="tl-connector">
-                    <div class="tl-node active"></div>
-                    <div class="tl-line"></div>
-                </div>
-                <div class="tl-right">
-                    <h3>Analista de NOC &amp; TI Interno</h3>
-                    <span class="tl-tenure" id="tenure">out 2025 – presente</span>
-                    <p>
-                        Operação da rede óptica e infraestrutura de TI corporativa,
-                        com foco em monitoramento, troubleshooting avançado,
-                        provisionamento GPON/EPON e ambientes virtualizados.
-                    </p>
-                    <div class="tl-chips">
-                        <span>GPON / EPON</span>
-                        <span>Virtualização</span>
-                        <span>NOC</span>
-                        <span>Troubleshooting L2/L3</span>
-                        <span>TI Corporativo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-item reveal-up delay-1">
-                <div class="tl-left">
-                    <span class="tl-company">Arroba Banda Larga</span>
-                </div>
-                <div class="tl-connector">
-                    <div class="tl-node"></div>
-                    <div class="tl-line"></div>
-                </div>
-                <div class="tl-right">
-                    <h3>Estagiário de NOC N3 &amp; TI Interno</h3>
-                    <p>
-                        Atuação em NOC e TI interno com configuração de VPNs,
-                        virtualização, suporte técnico e troubleshooting de rede.
-                    </p>
-                    <div class="tl-chips">
-                        <span>VPN</span>
-                        <span>Suporte N3</span>
-                        <span>Redes</span>
-                        <span>Virtualização</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-item reveal-up delay-2">
-                <div class="tl-left">
-                    <span class="tl-company">Arroba Banda Larga</span>
-                </div>
-                <div class="tl-connector">
-                    <div class="tl-node"></div>
-                    <div class="tl-line"></div>
-                </div>
-                <div class="tl-right">
-                    <h3>Estagiário de Suporte N2</h3>
-                    <p>
-                        Suporte remoto avançado, diagnóstico de conectividade,
-                        habilitação de serviços e análise técnica via IXC.
-                    </p>
-                    <div class="tl-chips">
-                        <span>Suporte N2</span>
-                        <span>IXC</span>
-                        <span>Diagnóstico</span>
-                        <span>Conectividade</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-item reveal-up delay-3">
-                <div class="tl-left">
-                    <span class="tl-company">Microlins</span>
-                </div>
-                <div class="tl-connector">
-                    <div class="tl-node"></div>
-                </div>
-                <div class="tl-right">
-                    <h3>Estagiário de TI</h3>
-                    <p>
-                        Suporte ao Pacote Office, manutenção de hardware
-                        e administração do sistema HUB ESCOLA.
-                    </p>
-                    <div class="tl-chips">
-                        <span>Hardware</span>
-                        <span>Suporte Office</span>
-                        <span>HUB ESCOLA</span>
-                    </div>
-                </div>
-            </div>
-
+      <div class="tl-item reveal-up delay-1">
+        <div class="tl-left">
+          <span class="tl-company">Arroba Banda Larga</span>
         </div>
-    </section>
-
-
-    <!-- ══════════════════════════
-         03 · SKILLS
-    ══════════════════════════ -->
-    <section id="skills" class="section">
-        <div class="section-header reveal-up">
-            <span class="sec-tag">// 03</span>
-            <h2 class="sec-title">Stack Técnico</h2>
-            <div class="sec-line"></div>
+        <div class="tl-connector">
+          <div class="tl-node"></div>
+          <div class="tl-line"></div>
         </div>
-
-        <div class="skills-layout">
-
-            <!-- Redes -->
-            <div class="skill-cat reveal-up">
-                <div class="skill-cat-header">
-                    <span class="skill-cat-icon">◈</span>
-                    <span class="skill-cat-name">Redes &amp; Infraestrutura</span>
-                </div>
-                <div class="skill-bars">
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>GPON / EPON</span><span class="sb-pct">95%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="95"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>TCP/IP · Roteamento</span><span class="sb-pct">88%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="88"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>VPN · Firewall</span><span class="sb-pct">82%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="82"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>Monitoramento NOC</span><span class="sb-pct">90%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="90"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>Troubleshooting L2/L3</span><span class="sb-pct">85%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="85"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sistemas -->
-            <div class="skill-cat reveal-up delay-1">
-                <div class="skill-cat-header">
-                    <span class="skill-cat-icon">◈</span>
-                    <span class="skill-cat-name">Sistemas &amp; Virtualização</span>
-                </div>
-                <div class="skill-bars">
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>Linux / CLI</span><span class="sb-pct">78%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="78"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>Virtualização (VMware / Proxmox)</span><span class="sb-pct">75%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="75"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>Windows Server</span><span class="sb-pct">70%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="70"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="sb-label-row"><span>IXC · Sistemas ISP</span><span class="sb-pct">88%</span></div>
-                        <div class="sb-track"><div class="sb-fill" data-w="88"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dev & Automação — full width -->
-            <div class="skill-cat full-width reveal-up delay-2">
-                <div class="skill-cat-header">
-                    <span class="skill-cat-icon">◈</span>
-                    <span class="skill-cat-name">Desenvolvimento &amp; Automação</span>
-                </div>
-                <div class="dev-cards">
-
-                    <div class="dev-card">
-                        <div class="dev-card-top">
-                            <img src="skills-logo/py-yellow.png" alt="Python">
-                            <div>
-                                <span class="dev-name">Python</span>
-                                <span class="dev-level">Básico / Intermediário</span>
-                            </div>
-                        </div>
-                        <p class="dev-desc">Scripts de automação de rede, coleta e tratamento de dados, utilitários de linha de comando.</p>
-                    </div>
-
-                    <div class="dev-card">
-                        <div class="dev-card-top">
-                            <img src="skills-logo/js-yellow.png" alt="JavaScript">
-                            <div>
-                                <span class="dev-name">JavaScript</span>
-                                <span class="dev-level">Básico / Apps Script</span>
-                            </div>
-                        </div>
-                        <p class="dev-desc">Automação de processos via Google Apps Script — integração Sheets, Forms e APIs externas. Desenvolvimento de pequenas webapps internas.</p>
-                        <div class="dev-tags">
-                            <span>Google Apps Script</span>
-                            <span>Google Sheets API</span>
-                            <span>Webapp</span>
-                        </div>
-                    </div>
-
-                    <div class="dev-card">
-                        <div class="dev-card-top">
-                            <img src="skills-logo/nodejs-yellow.png" alt="Node.js">
-                            <div>
-                                <span class="dev-name">Node.js</span>
-                                <span class="dev-level">Básico</span>
-                            </div>
-                        </div>
-                        <p class="dev-desc">Criação de scripts de back-end simples, automação de tarefas e consumo de APIs REST.</p>
-                    </div>
-
-                </div>
-            </div>
-
+        <div class="tl-right">
+          <h3>Estagiário de NOC N3 &amp; TI Interno</h3>
+          <span class="tl-tenure">2024 – 2025</span>
+          <p>Atuação em NOC e TI interno com configuração de VPNs, virtualização,
+             suporte técnico e troubleshooting de rede.</p>
+          <div class="tl-chips">
+            <span>VPN</span><span>Suporte N3</span><span>Redes</span><span>Virtualização</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-
-    <!-- ══════════════════════════
-         04 · CERTIFICADOS
-    ══════════════════════════ -->
-    <section id="certs" class="section">
-        <div class="section-header reveal-up">
-            <span class="sec-tag">// 04</span>
-            <h2 class="sec-title">Formação Complementar</h2>
-            <div class="sec-line"></div>
+      <div class="tl-item reveal-up delay-2">
+        <div class="tl-left">
+          <span class="tl-company">Arroba Banda Larga</span>
         </div>
-
-        <div class="filter-tabs reveal-up">
-            <button class="ftab active" data-filter="all">Todos</button>
-            <button class="ftab" data-filter="redes">Redes</button>
-            <button class="ftab" data-filter="seguranca">Segurança</button>
-            <button class="ftab" data-filter="dev">Dev</button>
-            <button class="ftab" data-filter="dados">Dados &amp; Gestão</button>
-            <button class="ftab" data-filter="ferramentas">Ferramentas</button>
+        <div class="tl-connector">
+          <div class="tl-node"></div>
+          <div class="tl-line"></div>
         </div>
-
-        <div class="certs-grid" id="certs-grid">
-
-            <div class="cert-card reveal-up" data-cat="seguranca">
-                <div class="cc-img-wrap">
-                    <img src="certificados/CIBERSEGURAN&#xC7;A: ANATOMIA CLASSICA DE UM CIBERATAQUE.png" alt="Cibersegurança" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Segurança</span>
-                    <h3>Cibersegurança: Anatomia Clássica de um Ciberataque</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-1" data-cat="redes">
-                <div class="cc-img-wrap">
-                    <img src="certificados/Redes, logica e Estrutura&#xE7;&#xE3;o.png" alt="Redes" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Redes</span>
-                    <h3>Redes, Lógica e Estruturação</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-2" data-cat="redes">
-                <div class="cc-img-wrap">
-                    <img src="certificados/Internet de las cosas.jpg" alt="IoT" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Redes / IoT</span>
-                    <h3>Internet das Coisas (IoT)</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up" data-cat="dev">
-                <div class="cc-img-wrap">
-                    <img src="certificados/PYTHON BASICO.png" alt="Python Básico" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Dev</span>
-                    <h3>Python Básico</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-1" data-cat="dev">
-                <div class="cc-img-wrap">
-                    <img src="certificados/PYTHON POO.png" alt="Python POO" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Dev</span>
-                    <h3>Python: Programação Orientada a Objetos</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-2" data-cat="dados">
-                <div class="cc-img-wrap">
-                    <img src="certificados/TI COMO ELEMENTO ESTRAT&#xC9;GICO NAS ORGANIZA&#xC7;OES.png" alt="TI Estratégico" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Gestão</span>
-                    <h3>TI como Elemento Estratégico nas Organizações</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up" data-cat="dados">
-                <div class="cc-img-wrap">
-                    <img src="certificados/FM2S FUNDAMENTO CIENCIAS DE DADOS.png" alt="Ciência de Dados" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Dados</span>
-                    <h3>Fundamentos de Ciência de Dados</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-1" data-cat="dados">
-                <div class="cc-img-wrap">
-                    <img src="certificados/governan&#xE7;a de dados.jpg" alt="Governança" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Dados</span>
-                    <h3>Governança de Dados</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-2" data-cat="redes">
-                <div class="cc-img-wrap">
-                    <img src="certificados/fundamentos de ti hardware e software.png" alt="Fundamentos TI" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Infraestrutura</span>
-                    <h3>Fundamentos de TI: Hardware e Software</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up" data-cat="ferramentas">
-                <div class="cc-img-wrap">
-                    <img src="certificados/Certificado excel avan&#xE7;ado.png" alt="Excel Avançado" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Ferramentas</span>
-                    <h3>Excel Avançado</h3>
-                </div>
-            </div>
-
-            <div class="cert-card reveal-up delay-1" data-cat="ferramentas">
-                <div class="cc-img-wrap">
-                    <img src="certificados/excel 2021.png" alt="Excel 2021" loading="lazy">
-                    <div class="cc-hover"><span>Ampliar</span></div>
-                </div>
-                <div class="cc-body">
-                    <span class="cc-tag">Ferramentas</span>
-                    <h3>Excel 2021</h3>
-                </div>
-            </div>
-
+        <div class="tl-right">
+          <h3>Estagiário de Suporte N2</h3>
+          <span class="tl-tenure">2023 – 2024</span>
+          <p>Suporte remoto avançado, diagnóstico de conectividade, habilitação de serviços
+             e análise técnica via IXC.</p>
+          <div class="tl-chips">
+            <span>Suporte N2</span><span>IXC</span><span>Diagnóstico</span><span>Conectividade</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-
-    <!-- ══════════════════════════
-         05 · CONTATO
-    ══════════════════════════ -->
-    <section id="contato" class="section">
-        <div class="section-header reveal-up">
-            <span class="sec-tag">// 05</span>
-            <h2 class="sec-title">Contato</h2>
-            <div class="sec-line"></div>
+      <div class="tl-item reveal-up delay-3">
+        <div class="tl-left">
+          <span class="tl-company">Microlins</span>
         </div>
-
-        <div class="contato-grid">
-            <div class="contato-text reveal-up">
-                <h3>Vamos conversar.</h3>
-                <p>
-                    Aberto a oportunidades em redes, NOC, infraestrutura e automação.
-                    Pode me chamar pelo LinkedIn ou mandar um e-mail — respondo rápido.
-                </p>
-                <div class="contato-cmd">
-                    <span class="tc-prompt">~$</span>
-                    <span>ping luizgustavobarros32@gmail.com</span>
-                </div>
-            </div>
-
-            <div class="contato-links reveal-up delay-1">
-                <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/" target="_blank" rel="noopener noreferrer" class="contato-card">
-                    <div class="cc-left"><img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"></div>
-                    <div class="cc-right">
-                        <span class="cc-net">LinkedIn</span>
-                        <span class="cc-handle">Luiz Gustavo de Barros</span>
-                    </div>
-                    <span class="cc-arrow">→</span>
-                </a>
-                <a href="https://github.com/001zk" target="_blank" rel="noopener noreferrer" class="contato-card">
-                    <div class="cc-left"><img src="logo-ctt/github-yellow.png" alt="GitHub"></div>
-                    <div class="cc-right">
-                        <span class="cc-net">GitHub</span>
-                        <span class="cc-handle">@001zk</span>
-                    </div>
-                    <span class="cc-arrow">→</span>
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com" target="_blank" rel="noopener noreferrer" class="contato-card">
-                    <div class="cc-left"><img src="logo-ctt/gmail-yellow.png" alt="Gmail"></div>
-                    <div class="cc-right">
-                        <span class="cc-net">E-mail</span>
-                        <span class="cc-handle">luizgustavobarros32@gmail.com</span>
-                    </div>
-                    <span class="cc-arrow">→</span>
-                </a>
-            </div>
+        <div class="tl-connector">
+          <div class="tl-node"></div>
         </div>
-    </section>
+        <div class="tl-right">
+          <h3>Estagiário de TI</h3>
+          <span class="tl-tenure">2022 – 2023</span>
+          <p>Suporte ao Pacote Office, manutenção de hardware e administração do sistema HUB ESCOLA.</p>
+          <div class="tl-chips">
+            <span>Hardware</span><span>Suporte Office</span><span>HUB ESCOLA</span>
+          </div>
+        </div>
+      </div>
 
-</div><!-- /content-wrap -->
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="footer-inner">
-        <span>Construído por <strong>Luiz Gustavo</strong> · 2026</span>
-        <a href="https://github.com/001zk" target="_blank" rel="noopener noreferrer" class="footer-gh">
-            <img src="logo-ctt/github-yellow.png" alt="GitHub"> @001zk
+  <section id="skills" class="section">
+
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 03</span>
+      <h2 class="sec-title">Stack Técnico</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="skills-layout">
+
+      <div class="skill-cat reveal-up">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">◈</span>
+          <span class="skill-cat-name">Redes &amp; Infraestrutura</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">GPON / EPON</span>
+          <span class="skill-tag">TCP/IP · Roteamento</span>
+          <span class="skill-tag">VPN · Firewall</span>
+          <span class="skill-tag">Monitoramento NOC</span>
+          <span class="skill-tag">Troubleshooting L2/L3</span>
+          <span class="skill-tag">MikroTik</span>
+          <span class="skill-tag">Zabbix</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal-up delay-1">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">◈</span>
+          <span class="skill-cat-name">Sistemas &amp; Virtualização</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">VMware</span>
+          <span class="skill-tag">Proxmox</span>
+          <span class="skill-tag">Windows Server</span>
+          <span class="skill-tag">IXC Soft</span>
+          <span class="skill-tag">Virtualização</span>
+        </div>
+      </div>
+
+      <div class="skill-cat full-width reveal-up delay-2">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">◈</span>
+          <span class="skill-cat-name">Desenvolvimento &amp; Automação</span>
+        </div>
+        <div class="dev-cards">
+          <div class="dev-card">
+            <div class="dev-card-top">
+              <img src="skills-logo/py-yellow.png" alt="Python">
+              <div>
+                <span class="dev-name">Python</span>
+                <span class="dev-level">Básico / Intermediário</span>
+              </div>
+            </div>
+            <p class="dev-desc">Scripts de automação de rede, coleta e tratamento de dados,
+               utilitários de linha de comando.</p>
+          </div>
+          <div class="dev-card">
+            <div class="dev-card-top">
+              <img src="skills-logo/js-yellow.png" alt="JavaScript">
+              <div>
+                <span class="dev-name">JavaScript</span>
+                <span class="dev-level">Básico / Apps Script</span>
+              </div>
+            </div>
+            <p class="dev-desc">Automação via Google Apps Script — integração Sheets, Forms e APIs.
+               Desenvolvimento de webapps internas.</p>
+            <div class="dev-tags">
+              <span>Google Apps Script</span><span>Sheets API</span><span>Webapp</span>
+            </div>
+          </div>
+          <div class="dev-card">
+            <div class="dev-card-top">
+              <img src="skills-logo/nodejs-yellow.png" alt="Node.js">
+              <div>
+                <span class="dev-name">Node.js</span>
+                <span class="dev-level">Básico</span>
+              </div>
+            </div>
+            <p class="dev-desc">Scripts de back-end simples, automação de tarefas e consumo de APIs REST.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projetos" class="section">
+
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 04</span>
+      <h2 class="sec-title">Projetos</h2>
+      <div class="sec-line"></div>
+      <a href="https://github.com/001zk" target="_blank" rel="noopener" class="proj-gh-link">
+        Ver no GitHub →
+      </a>
+    </div>
+
+    <div class="proj-filter-tabs reveal-up" id="proj-tabs">
+      <button class="proj-tab active" data-lang="all">Todos</button>
+      <button class="proj-tab" data-lang="Python">Python</button>
+      <button class="proj-tab" data-lang="JavaScript">JavaScript</button>
+      <button class="proj-tab" data-lang="HTML">HTML</button>
+      <button class="proj-tab" data-lang="C">C</button>
+    </div>
+
+    <div class="projects-grid reveal-up delay-1" id="projects-grid">
+      <p class="proj-status">Carregando repositórios...</p>
+    </div>
+
+  </section>
+
+  <section id="certs" class="section">
+
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 05</span>
+      <h2 class="sec-title">Formação Complementar</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="filter-tabs reveal-up">
+      <button class="ftab active" data-filter="all">Todos</button>
+      <button class="ftab" data-filter="redes">Redes</button>
+      <button class="ftab" data-filter="seguranca">Segurança</button>
+      <button class="ftab" data-filter="dev">Dev</button>
+      <button class="ftab" data-filter="dados">Dados &amp; Gestão</button>
+      <button class="ftab" data-filter="ferramentas">Ferramentas</button>
+    </div>
+
+    <div class="certs-grid" id="certs-grid">
+
+      <div class="cert-card reveal-up" data-cat="seguranca">
+        <div class="cc-img-wrap">
+          <img src="certificados/CIBERSEGURANÇA: ANATOMIA CLASSICA DE UM CIBERATAQUE.png" alt="Cibersegurança" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Segurança</span>
+          <h3>Cibersegurança: Anatomia Clássica de um Ciberataque</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-1" data-cat="redes">
+        <div class="cc-img-wrap">
+          <img src="certificados/Redes, logica e Estruturação.png" alt="Redes" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Redes</span>
+          <h3>Redes, Lógica e Estruturação</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-2" data-cat="redes">
+        <div class="cc-img-wrap">
+          <img src="certificados/Internet de las cosas.jpg" alt="IoT" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Redes / IoT</span>
+          <h3>Internet das Coisas (IoT)</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" data-cat="dev">
+        <div class="cc-img-wrap">
+          <img src="certificados/PYTHON BASICO.png" alt="Python Básico" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Dev</span>
+          <h3>Python Básico</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-1" data-cat="dev">
+        <div class="cc-img-wrap">
+          <img src="certificados/PYTHON POO.png" alt="Python POO" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Dev</span>
+          <h3>Python: Programação Orientada a Objetos</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-2" data-cat="dados">
+        <div class="cc-img-wrap">
+          <img src="certificados/TI COMO ELEMENTO ESTRATÉGICO NAS ORGANIZACOES.png" alt="TI Estratégico" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Gestão</span>
+          <h3>TI como Elemento Estratégico nas Organizações</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" data-cat="dados">
+        <div class="cc-img-wrap">
+          <img src="certificados/FM2S FUNDAMENTO CIENCIAS DE DADOS.png" alt="Ciência de Dados" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Dados</span>
+          <h3>Fundamentos de Ciência de Dados</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-1" data-cat="dados">
+        <div class="cc-img-wrap">
+          <img src="certificados/governança de dados.jpg" alt="Governança" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Dados</span>
+          <h3>Governança de Dados</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-2" data-cat="redes">
+        <div class="cc-img-wrap">
+          <img src="certificados/fundamentos de ti hardware e software.png" alt="Fundamentos TI" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Infraestrutura</span>
+          <h3>Fundamentos de TI: Hardware e Software</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" data-cat="ferramentas">
+        <div class="cc-img-wrap">
+          <img src="certificados/Certificado excel avançado.png" alt="Excel Avançado" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Ferramentas</span>
+          <h3>Excel Avançado</h3>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up delay-1" data-cat="ferramentas">
+        <div class="cc-img-wrap">
+          <img src="certificados/excel 2021.png" alt="Excel 2021" loading="lazy">
+          <div class="cc-hover"><span>Ampliar</span></div>
+        </div>
+        <div class="cc-body">
+          <span class="cc-tag">Ferramentas</span>
+          <h3>Excel 2021</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+
+    <div class="section-header reveal-up">
+      <span class="sec-tag">// 06</span>
+      <h2 class="sec-title">Contato</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="contato-grid">
+
+      <div class="contato-text reveal-up">
+        <h3>Vamos conversar.</h3>
+        <p>Aberto a oportunidades em redes, NOC, infraestrutura e automação.
+           Pode me chamar pelo LinkedIn ou mandar um e-mail — respondo rápido.</p>
+        <div class="contato-cmd">
+          <span class="tc-prompt">~$</span>
+          <span>ping luizgustavobarros32@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="contato-links reveal-up delay-1">
+        <a href="https://www.linkedin.com/in/luiz-gustavo-de-barros-175a79309/"
+           target="_blank" rel="noopener" class="contato-card">
+          <div class="cc-left"><img src="logo-ctt/linkd-yellow.png" alt="LinkedIn"></div>
+          <div class="cc-right">
+            <span class="cc-net">LinkedIn</span>
+            <span class="cc-handle">Luiz Gustavo de Barros</span>
+          </div>
+          <span class="cc-arrow">→</span>
         </a>
-    </div>
-</footer>
+        <a href="https://github.com/001zk"
+           target="_blank" rel="noopener" class="contato-card">
+          <div class="cc-left"><img src="logo-ctt/github-yellow.png" alt="GitHub"></div>
+          <div class="cc-right">
+            <span class="cc-net">GitHub</span>
+            <span class="cc-handle">@001zk</span>
+          </div>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luizgustavobarros32@gmail.com"
+           target="_blank" rel="noopener" class="contato-card">
+          <div class="cc-left"><img src="logo-ctt/gmail-yellow.png" alt="Gmail"></div>
+          <div class="cc-right">
+            <span class="cc-net">E-mail</span>
+            <span class="cc-handle">luizgustavobarros32@gmail.com</span>
+          </div>
+          <span class="cc-arrow">→</span>
+        </a>
+      </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-    <div class="lb-backdrop"></div>
-    <div class="lb-wrap">
-        <button class="lb-close" id="lb-close">✕</button>
-        <img id="lb-img" src="" alt="">
     </div>
+  </section>
+
 </div>
 
-<script src="script.js"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Construído por <strong>Luiz Gustavo</strong> · 2026</span>
+    <a href="https://github.com/001zk" target="_blank" rel="noopener" class="footer-gh">
+      <img src="logo-ctt/github-yellow.png" alt="GitHub"> @001zk
+    </a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-backdrop"></div>
+  <div class="lb-wrap">
+    <button class="lb-close" id="lb-close">✕</button>
+    <img id="lb-img" src="" alt="">
+  </div>
+</div>
+
+<script src="main.js"></script>
+
 </body>
 </html>
