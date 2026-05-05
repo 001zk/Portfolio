@@ -28,23 +28,21 @@ document.querySelectorAll('.reveal-up').forEach(el => revealObs.observe(el));
 function animateCount(el) {
   const target = parseInt(el.dataset.count, 10);
   if (!target) return;
-  const duration = 1400;
   const steps    = 60;
-  const interval = duration / steps;
-  let   current  = 0;
+  const interval = 1400 / steps;
+  let current    = 0;
   const timer = setInterval(() => {
     current++;
     el.textContent = current;
     if (current >= target) clearInterval(timer);
   }, interval);
 }
-
 setTimeout(() => {
   document.querySelectorAll('.metric-num[data-count]').forEach(animateCount);
 }, 300);
 
 const menuBtn = document.getElementById('mob-menu-btn');
-const overlay  = document.getElementById('mob-overlay');
+const overlay = document.getElementById('mob-overlay');
 menuBtn?.addEventListener('click', () => {
   menuBtn.classList.toggle('open');
   overlay?.classList.toggle('open');
@@ -60,14 +58,10 @@ const lightbox   = document.getElementById('lightbox');
 const lbImg      = document.getElementById('lb-img');
 const lbClose    = document.getElementById('lb-close');
 const lbBackdrop = lightbox?.querySelector('.lb-backdrop');
-
 document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
     const src = card.querySelector('img')?.src;
-    if (src && lightbox && lbImg) {
-      lbImg.src = src;
-      lightbox.classList.add('open');
-    }
+    if (src && lightbox && lbImg) { lbImg.src = src; lightbox.classList.add('open'); }
   });
 });
 lbClose?.addEventListener('click',    () => lightbox?.classList.remove('open'));
@@ -110,14 +104,21 @@ const LANG_COLORS = {
 const IGNORE = ['Portfolio'];
 
 async function fetchRepos(user) {
+  const controller = new AbortController();
+  const timeout    = setTimeout(() => controller.abort(), 6000);
   try {
-    const res = await fetch(`https://api.github.com/users/${user}/repos?sort=updated&per_page=50`);
+    const res = await fetch(
+      `https://api.github.com/users/${user}/repos?sort=updated&per_page=50`,
+      { signal: controller.signal }
+    );
+    clearTimeout(timeout);
     if (!res.ok) return [];
     const repos = await res.json();
     return repos
       .filter(r => !r.fork && !IGNORE.includes(r.name))
       .map(r => ({ ...r, _owner: user }));
   } catch {
+    clearTimeout(timeout);
     return [];
   }
 }
@@ -151,9 +152,13 @@ async function loadProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
   grid.innerHTML = `<p class="proj-status">Carregando repositórios...</p>`;
-  const [r1, r2] = await Promise.all([fetchRepos('001zk'), fetchRepos('Luiz-alt001')]);
-  window._allRepos = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-  renderCards(window._allRepos);
+  try {
+    const [r1, r2] = await Promise.all([fetchRepos('001zk'), fetchRepos('Luiz-alt001')]);
+    window._allRepos = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    renderCards(window._allRepos);
+  } catch {
+    grid.innerHTML = `<p class="proj-status">Não foi possível carregar os repositórios. <a href="https://github.com/001zk" target="_blank" rel="noopener" style="color:var(--amber)">Ver no GitHub →</a></p>`;
+  }
 }
 
 loadProjects();
