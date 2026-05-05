@@ -22,10 +22,28 @@ const revealObs = new IntersectionObserver(entries => {
       revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal-up').forEach(el => revealObs.observe(el));
 
-const menuBtn  = document.getElementById('mob-menu-btn');
+function animateCount(el) {
+  const target = parseInt(el.dataset.count, 10);
+  if (!target) return;
+  const duration = 1400;
+  const steps    = 60;
+  const interval = duration / steps;
+  let   current  = 0;
+  const timer = setInterval(() => {
+    current++;
+    el.textContent = current;
+    if (current >= target) clearInterval(timer);
+  }, interval);
+}
+
+setTimeout(() => {
+  document.querySelectorAll('.metric-num[data-count]').forEach(animateCount);
+}, 300);
+
+const menuBtn = document.getElementById('mob-menu-btn');
 const overlay  = document.getElementById('mob-overlay');
 menuBtn?.addEventListener('click', () => {
   menuBtn.classList.toggle('open');
@@ -38,31 +56,9 @@ document.querySelectorAll('.mob-link').forEach(a => {
   });
 });
 
-function animateCount(el) {
-  const target = parseInt(el.dataset.count, 10);
-  const duration = 1200;
-  const step = target / (duration / 16);
-  let current = 0;
-  const tick = () => {
-    current = Math.min(current + step, target);
-    el.textContent = Math.floor(current);
-    if (current < target) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-}
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(e.target);
-      counterObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.metric-num[data-count]').forEach(el => counterObs.observe(el));
-
-const lightbox  = document.getElementById('lightbox');
-const lbImg     = document.getElementById('lb-img');
-const lbClose   = document.getElementById('lb-close');
+const lightbox   = document.getElementById('lightbox');
+const lbImg      = document.getElementById('lb-img');
+const lbClose    = document.getElementById('lb-close');
 const lbBackdrop = lightbox?.querySelector('.lb-backdrop');
 
 document.querySelectorAll('.cert-card').forEach(card => {
@@ -74,9 +70,9 @@ document.querySelectorAll('.cert-card').forEach(card => {
     }
   });
 });
-lbClose?.addEventListener('click',   () => lightbox?.classList.remove('open'));
+lbClose?.addEventListener('click',    () => lightbox?.classList.remove('open'));
 lbBackdrop?.addEventListener('click', () => lightbox?.classList.remove('open'));
-document.addEventListener('keydown',  e => { if (e.key === 'Escape') lightbox?.classList.remove('open'); });
+document.addEventListener('keydown',  e  => { if (e.key === 'Escape') lightbox?.classList.remove('open'); });
 
 document.querySelectorAll('.ftab').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -93,7 +89,7 @@ document.querySelectorAll('.proj-tab').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const lang = btn.dataset.lang;
+    const lang     = btn.dataset.lang;
     const filtered = lang === 'all'
       ? window._allRepos || []
       : (window._allRepos || []).filter(r => r.language === lang);
@@ -114,12 +110,16 @@ const LANG_COLORS = {
 const IGNORE = ['Portfolio'];
 
 async function fetchRepos(user) {
-  const res = await fetch(`https://api.github.com/users/${user}/repos?sort=updated&per_page=30`);
-  if (!res.ok) return [];
-  const repos = await res.json();
-  return repos
-    .filter(r => !r.fork && !IGNORE.includes(r.name) && r.description)
-    .map(r => ({ ...r, _owner: user }));
+  try {
+    const res = await fetch(`https://api.github.com/users/${user}/repos?sort=updated&per_page=50`);
+    if (!res.ok) return [];
+    const repos = await res.json();
+    return repos
+      .filter(r => !r.fork && !IGNORE.includes(r.name))
+      .map(r => ({ ...r, _owner: user }));
+  } catch {
+    return [];
+  }
 }
 
 function renderCards(repos) {
@@ -135,7 +135,7 @@ function renderCards(repos) {
         <span class="proj-name">${r.name}</span>
         <span class="proj-owner">@${r._owner}</span>
       </div>
-      <p class="proj-desc">${r.description}</p>
+      <p class="proj-desc">${r.description || '—'}</p>
       <div class="proj-footer">
         <span class="proj-lang">
           <span class="proj-lang-dot" style="background:${LANG_COLORS[r.language] || '#888'}"></span>
@@ -150,19 +150,10 @@ function renderCards(repos) {
 async function loadProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
-  try {
-    const [r1, r2] = await Promise.all([fetchRepos('001zk'), fetchRepos('Luiz-alt001')]);
-    window._allRepos = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-    renderCards(window._allRepos);
-  } catch {
-    if (grid) grid.innerHTML = `<p class="proj-status">Erro ao carregar repositórios.</p>`;
-  }
+  grid.innerHTML = `<p class="proj-status">Carregando repositórios...</p>`;
+  const [r1, r2] = await Promise.all([fetchRepos('001zk'), fetchRepos('Luiz-alt001')]);
+  window._allRepos = [...r1, ...r2].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+  renderCards(window._allRepos);
 }
 
-const projSection = document.getElementById('projetos');
-if (projSection) {
-  const projObs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) { loadProjects(); projObs.disconnect(); }
-  }, { threshold: 0.1 });
-  projObs.observe(projSection);
-}
+loadProjects();
