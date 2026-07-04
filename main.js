@@ -333,7 +333,10 @@ const lightbox   = document.getElementById('lightbox');
 const lbImg      = document.getElementById('lb-img');
 const lbClose    = document.getElementById('lb-close');
 const lbBackdrop = lightbox?.querySelector('.lb-backdrop');
-document.querySelectorAll('.cert-card').forEach(card => {
+
+// Lightbox: cobre tanto os certificados da grade (.cert-card) quanto os
+// cards da seção "Certificações em Destaque" (.highlight-card).
+document.querySelectorAll('.cert-card, .highlight-card').forEach(card => {
   card.addEventListener('click', () => {
     const src = card.querySelector('img')?.src;
     if (src && lightbox && lbImg) { lbImg.src = src; lightbox.classList.add('open'); }
@@ -343,6 +346,8 @@ lbClose?.addEventListener('click',    () => lightbox?.classList.remove('open'));
 lbBackdrop?.addEventListener('click', () => lightbox?.classList.remove('open'));
 document.addEventListener('keydown',  e  => { if (e.key === 'Escape') lightbox?.classList.remove('open'); });
 
+// O filtro de abas ("Redes", "Segurança"...) só enxerga .cert-card,
+// então os cards de Destaque (.highlight-card) não são afetados por ele.
 document.querySelectorAll('.ftab').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
